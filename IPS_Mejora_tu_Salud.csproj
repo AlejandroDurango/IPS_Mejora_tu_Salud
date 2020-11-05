@@ -64,6 +64,24 @@
     <Compile Include="Interfaces\RegistrarPaciente.Designer.cs">
       <DependentUpon>RegistrarPaciente.cs</DependentUpon>
     </Compile>
+    <Compile Include="Interfaces\Medicos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Interfaces\Medicos.Designer.cs">
+      <DependentUpon>Medicos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Interfaces\Menu_Principal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Interfaces\Menu_Principal.Designer.cs">
+      <DependentUpon>Menu_Principal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Interfaces\Inicio_Sesion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Interfaces\Inicio_Sesion.Designer.cs">
+      <DependentUpon>Inicio_Sesion.cs</DependentUpon>
+    </Compile>
     <Compile Include="Modelo\Class1.cs" />
     <Compile Include="Modelo\Excepciones\Class1.cs" />
     <Compile Include="Program.cs" />
@@ -78,6 +96,15 @@
     <EmbeddedResource Include="Interfaces\RegistrarPaciente.resx">
       <DependentUpon>RegistrarPaciente.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Interfaces\Medicos.resx">
+      <DependentUpon>Medicos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Interfaces\Menu_Principal.resx">
+      <DependentUpon>Menu_Principal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Interfaces\Inicio_Sesion.resx">
+      <DependentUpon>Inicio_Sesion.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -86,6 +113,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="Documentación\Practica3_BD_20202.pdf" />
     <None Include="Properties\Settings.settings">
@@ -104,6 +132,7 @@
   <ItemGroup />
   <ItemGroup>
     <Content Include="Documentación\Requisitos.txt" />
+    <Content Include="Recursos\Logo.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
