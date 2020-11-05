@@ -1,0 +1,151 @@
+IPS “MEJORA TU SALUD"
+			++++BACKEND+++
+USUARIOS
+
+
+
+MEDICOS:
+FORMA 1
+• Especialidad (Médico general, optómetra, pediatra)
+Médico general
+	• Cédula (único 
+	• Nombres
+	• Apellidos
+	• Salario por cita.
+	• Años de experiencia
+	• Numero de citas =2
+
+
+Optometria
+	• Cédula (único 
+	• Nombres
+	• Apellidos
+	• Salario por cita.
+	• Años de experiencia
+	• Numero de citas
+
+Pediatria
+	• Cédula (único )
+	• Nombres
+	• Apellidos
+	• Salario por cita.
+	• Años de experiencia
+	• Numero de citas
+
+FORMA 2 
+0
+	• Cédula (único )
+	• Nombres
+	• Apellidos
+	• Especialidad (Médico general, optómetra, pediatra)
+	• Salario por cita.
+	• Años de experiencia
+
+PACIENTES
+FORMULARIO REGISTRO
+	• Número de identificación (único)
+	• Nombres
+	• Apellidos
+	• Fecha de nacimiento
+	• Dirección
+	• Teléfono
+	• Email
+	• Fecha de registro +
+	*citas:[1,2]
+
+*MULTAS== 0:
+	(SI MULTAS ==0 ERNTONCES CLIENTE PAZ Y SALVO) asigna cita
+
+	(si multas !0  entonces multas*4000=valor multa // Cliente CON MULTAS NOE S POSIBLE ASIGNAR CITAS 
++
+
+	++++++++ASIGNA CITA++++++
+SI ARRELGO .SIZE =0  (tipo1=General tipo2 =pediatria  tipo3 =Optometria)
+	HABILITO 3 BOTONES
+
+	-MEDICO GENERAL(VA Y BUSCA EN MEDICOSGENERAL Y ASIGNA; ARREGLO POSICION 1 LLEVA ESE OBJETO CON LOSDATOS D ELACITA TIPO MEDICO ,A la vaqriable cita de medico lelevele loqmue habi ahi mas 1 )
+-	-PEDIATRIA (VA Y BUSCA EN MEDICOS PEDIATRIA Y ASIGNA; ARREGLO POSICION 	1 LLEVA ESE OBJETO CON LOSDATOS D ELACITA TIPO MEDICO ,A la vaqriable cita de medico lelevele loqmue habi ahi mas 1 )
+	-OPTOMETRIA(VA Y BUSCA EN MEDICOS OPTOMETRAS Y ASIGNA; ARREGLO POSICION 1 LLEVA ESE OBJETO CON LOSDATOS D ELACITA TIPO MEDICO,A la vaqriable cita de medico lelevele loqmue habi ahi mas 1 )
+
+SI ARRELGO .SIZE =1
+	BUSCAR EN ESE AREEGLO TIPO CITA ES 
+	TIPO 1=  
+x
+
+		HABILITAR TIPO2
+			(VA Y BUSCA EN MEDICOS tipo2 Y ASIGNA; ARREGLO POSICION 2 LLEVA ESE OBJETO CON LOSDATOS DE LA CITA TIPO MEDICO ,A la vaqriable cita de medico lelevele loqmue habi ahi mas 1 )
+	 	HABILITA TIPO 3
+			(VA Y BUSCA EN MEDICOS tipo 3 Y ASIGNA; ARREGLO POSICION 2 LLEVA ESE OBJETO CON LOSDATOS DE LA CITA TIPO MEDICO ,A la vaqriable cita de medico lelevele loqmue habi ahi mas 1 )
+
+	TIPO 2=
+		HABILITAR TIPO 1 Y TIPO 3
+	TIPO 3=
+		HABILITAR TIPO1 Y TIPO 2
+
+SI ARRELGO .SIZE =2
+	el Paciente ya tiene 2 citas asignadas no se le puede asiganr 
+
+		
+
+
+				
+-ACTUALZIAR DATOS: PACIENTE BUSCADO LLEVELE
+	• Dirección = DIRECION NUEVA
+	• Teléfono =TELEFONO NUEVO	
+	• Email == EMAIL NUEVO
+
+
+			++++FRONTEND+++++
+
+BUENAS PRACTICAS
+*nombres de botones,btn_Nombre
+*labels : lbl_Nombre
+*interfaces Nombre
+*cajas de texto: txt_Nombre
+*se deben nombrar en español*
+
+
+
+MENU PRINCIPAL PARA IPS
+-INICIAR SESION (vaLIDACION NUMERICOS Y DATOS ERRONES EXCEPCIONES)
+-REGISTRO usuario ips (VALIDACION NUMERICOS Y DATOS ERRONES EXCEPCIONES)(opcional)
+
+MENÚ 1  -- PACIENTE
+-BUSCAR Texbox escribir el apciente
+	-VERIFICA SI PACIENTE REGISTRA(PRIMARY KEY PACIENTE)
+
+-REGISTRAR PACIENTE:
+	FORMULARIO REGISTRO
+	• Número de identificación (único)
+	• Nombres
+	• Apellidos
+	• Fecha de nacimiento
+	• Dirección
+	• Teléfono
+	• Email
+	• Fecha de registro 
+	
+MENU1.1 
+	-ACTUALZIAR DATOS:
+		• Dirección
+		• Teléfono
+		• Email
+
+	-VER MULTAS DEL PACIENTE 1 
+		• Ver las citas incumplidas.PREGUNTA¡? pago multa
+
+	-MENÚ 1.1.1 CITAS
+	• Registrar Cita	
+		-VERIFICA PAZ Y SALVO()
+		-CITAS DISPONIBLES
+	-VER CITAS DE PACIENTE (muyestra el puto arreglo) CUMPLIDO NO CUMPLIDO SE VA ABAJO 
+
+	
+
+
+MENU 2 MEDICO
+	-REGISTRO MEDICO
+	• Actualizar el nombre y el salario por cita del médico.
+	• Ver valor a pagar al médico en cualquier momento.
+
+
