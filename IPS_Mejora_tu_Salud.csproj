@@ -82,5 +82,8 @@
     <Folder Include="Modelo\Excepciones\" />
     <Folder Include="Pruebas_Unitarios\" />
   </ItemGroup>
+  <ItemGroup>
+    <Content Include="Documentación\Requisitos.txt" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
