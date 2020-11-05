@@ -46,11 +46,23 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Interfaces\Form1.cs">
+    <Compile Include="Interfaces\BuscarPaciente.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Interfaces\Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="Interfaces\BuscarPaciente.Designer.cs">
+      <DependentUpon>BuscarPaciente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Interfaces\MenuPacientes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Interfaces\MenuPacientes.Designer.cs">
+      <DependentUpon>MenuPacientes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Interfaces\RegistrarPaciente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Interfaces\RegistrarPaciente.Designer.cs">
+      <DependentUpon>RegistrarPaciente.cs</DependentUpon>
     </Compile>
     <Compile Include="Interfaces\Medicos.cs">
       <SubType>Form</SubType>
@@ -75,8 +87,14 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Pruebas_Unitarios\Class1.cs" />
-    <EmbeddedResource Include="Interfaces\Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <EmbeddedResource Include="Interfaces\BuscarPaciente.resx">
+      <DependentUpon>BuscarPaciente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Interfaces\MenuPacientes.resx">
+      <DependentUpon>MenuPacientes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Interfaces\RegistrarPaciente.resx">
+      <DependentUpon>RegistrarPaciente.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Interfaces\Medicos.resx">
       <DependentUpon>Medicos.cs</DependentUpon>
