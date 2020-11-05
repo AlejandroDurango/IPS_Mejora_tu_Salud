@@ -103,12 +103,13 @@ BUENAS PRACTICAS
 *interfaces Nombre
 *cajas de texto: txt_Nombre
 *se deben nombrar en español*
+tamaño formulario 1000; 506
 
 
 
 MENU PRINCIPAL PARA IPS
 -INICIAR SESION (vaLIDACION NUMERICOS Y DATOS ERRONES EXCEPCIONES)
--REGISTRO usuario ips (VALIDACION NUMERICOS Y DATOS ERRONES EXCEPCIONES)(opcional)
+
 
 MENÚ 1  -- PACIENTE
 -BUSCAR Texbox escribir el apciente
