@@ -1,4 +1,5 @@
-﻿using System;
+﻿using IPS_Mejora_tu_Salud.Interfaces;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -16,7 +17,8 @@ namespace IPS_Mejora_tu_Salud
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            Form inicio = new Inicio_Sesion();
+            Application.Run(inicio);
         }
     }
 }

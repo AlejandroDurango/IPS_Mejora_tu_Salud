@@ -98,12 +98,15 @@ SI ARRELGO .SIZE =2
 			++++FRONTEND+++++
 
 BUENAS PRACTICAS
+*no poner tildes a los nombres
 *nombres de botones,btn_Nombre
-*labels : lbl_Nombre
+*labels : lbl_nombre
 *interfaces Nombre
 *cajas de texto: txt_Nombre
 *se deben nombrar en español*
 tamaño formulario 1000; 506
+Formulario.Backcolor ActiveBorder
+
 
 
 
