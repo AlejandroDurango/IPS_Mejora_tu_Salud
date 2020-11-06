@@ -64,7 +64,10 @@
     <Compile Include="Interfaces\RegistrarPaciente.Designer.cs">
       <DependentUpon>RegistrarPaciente.cs</DependentUpon>
     </Compile>
-    <Compile Include="Modelo\Class1.cs" />
+    <Compile Include="Modelo\Cita.cs" />
+    <Compile Include="Modelo\Medico.cs" />
+    <Compile Include="Modelo\Paciente.cs" />
+    <Compile Include="Modelo\Conexion.cs" />
     <Compile Include="Modelo\Excepciones\Class1.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

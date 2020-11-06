@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace IPS_Mejora_tu_Salud.Modelo
 {
-    class Class1
+    class Conexion
     {
+        public String conexion = "Data Source=DESKTOP-AHHSEHI/SANTI19;Initial Catalog=IPS;Integrated Security=True";
     }
 }
