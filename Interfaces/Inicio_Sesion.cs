@@ -19,9 +19,17 @@ namespace IPS_Mejora_tu_Salud.Interfaces
 
         private void btn_IrIniciarSesion_Click(object sender, EventArgs e)
         {
-            Menu_Principal.ActiveForm.Show();
-            this.Close();
+            Form Modulo = new Modulo_Principal();
+            Modulo.Show();
+            this.Hide();
+            
 
+
+        }
+
+        private void btn_Salir_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }
