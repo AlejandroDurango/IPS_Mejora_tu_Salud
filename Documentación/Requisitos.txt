@@ -142,6 +142,10 @@ MENU1.1
 	• Registrar Cita	
 		-VERIFICA PAZ Y SALVO()
 		-CITAS DISPONIBLES
+		-tipo cita
+		-medico 
+		-paciente 
+		-fecha cita 
 	-VER CITAS DE PACIENTE (muyestra el puto arreglo) CUMPLIDO NO CUMPLIDO SE VA ABAJO 
 
 	
