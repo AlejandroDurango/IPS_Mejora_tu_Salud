@@ -65,8 +65,12 @@
     <Compile Include="Interfaces\Inicio_Sesion.Designer.cs">
       <DependentUpon>Inicio_Sesion.cs</DependentUpon>
     </Compile>
-    <Compile Include="Modelo\Class1.cs" />
+    <Compile Include="Modelo\Cita.cs" />
+    <Compile Include="Modelo\IPS.cs" />
+    <Compile Include="Modelo\Conexion.cs" />
     <Compile Include="Modelo\Excepciones\Class1.cs" />
+    <Compile Include="Modelo\Medico.cs" />
+    <Compile Include="Modelo\Paciente.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Pruebas_Unitarios\Class1.cs" />
