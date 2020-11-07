@@ -57,6 +57,7 @@ namespace IPS_Mejora_tu_Salud.Interfaces
             this.txt_documento = new System.Windows.Forms.TextBox();
             this.btn_Buscar = new System.Windows.Forms.Button();
             this.Grupo_Registro = new System.Windows.Forms.GroupBox();
+            this.btn_RegistroPaciente = new System.Windows.Forms.Button();
             this.txt_FechaRegistro = new System.Windows.Forms.TextBox();
             this.lbl_FechaRegistroPaciente = new System.Windows.Forms.Label();
             this.txt_Email = new System.Windows.Forms.TextBox();
@@ -73,7 +74,6 @@ namespace IPS_Mejora_tu_Salud.Interfaces
             this.lbl_NombresPaciente = new System.Windows.Forms.Label();
             this.txt_Identificacion = new System.Windows.Forms.TextBox();
             this.lbl_IdentificacionPaciente = new System.Windows.Forms.Label();
-            this.btn_RegistroPaciente = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.Grupo_Buscar.SuspendLayout();
@@ -305,6 +305,16 @@ namespace IPS_Mejora_tu_Salud.Interfaces
             this.Grupo_Registro.Text = "Registro";
             this.Grupo_Registro.Visible = false;
             // 
+            // btn_RegistroPaciente
+            // 
+            this.btn_RegistroPaciente.Location = new System.Drawing.Point(130, 348);
+            this.btn_RegistroPaciente.Name = "btn_RegistroPaciente";
+            this.btn_RegistroPaciente.Size = new System.Drawing.Size(90, 35);
+            this.btn_RegistroPaciente.TabIndex = 3;
+            this.btn_RegistroPaciente.Text = "Buscar";
+            this.btn_RegistroPaciente.UseVisualStyleBackColor = true;
+            this.btn_RegistroPaciente.Click += new System.EventHandler(this.btn_RegistroPaciente_click);
+            // 
             // txt_FechaRegistro
             // 
             this.txt_FechaRegistro.Location = new System.Drawing.Point(151, 284);
@@ -448,16 +458,6 @@ namespace IPS_Mejora_tu_Salud.Interfaces
             this.lbl_IdentificacionPaciente.Size = new System.Drawing.Size(107, 20);
             this.lbl_IdentificacionPaciente.TabIndex = 2;
             this.lbl_IdentificacionPaciente.Text = "Identificación:";
-            // 
-            // btn_RegistroPaciente
-            // 
-            this.btn_RegistroPaciente.Location = new System.Drawing.Point(130, 348);
-            this.btn_RegistroPaciente.Name = "btn_RegistroPaciente";
-            this.btn_RegistroPaciente.Size = new System.Drawing.Size(90, 35);
-            this.btn_RegistroPaciente.TabIndex = 3;
-            this.btn_RegistroPaciente.Text = "Buscar";
-            this.btn_RegistroPaciente.UseVisualStyleBackColor = true;
-            this.btn_RegistroPaciente.Click += new System.EventHandler(this.btn_RegistroPaciente_click);
             // 
             // Modulo_Principal
             // 

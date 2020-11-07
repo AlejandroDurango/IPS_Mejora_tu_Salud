@@ -19,7 +19,7 @@ namespace IPS_Mejora_tu_Salud.Interfaces
         }
         private void Str_CerrarSesion_Click_1(object sender, EventArgs e)
         {
-            Form iniciosesion = new Inicio_Sesion
+            Form iniciosesion = new Inicio_Sesion();
             iniciosesion.Show();
             this.Hide();
         }
@@ -95,6 +95,9 @@ namespace IPS_Mejora_tu_Salud.Interfaces
             }
         }
 
-        
+        private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
