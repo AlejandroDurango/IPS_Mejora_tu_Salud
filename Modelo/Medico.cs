@@ -8,29 +8,29 @@ namespace IPS_Mejora_tu_Salud.Modelo
 {
     class Medico
     {
-        private String IdentificacionMedico;
-        private String Nombres;
-        private String Apellidos;
-        private String Especialidad;
-        private int SalarioPorCita;
-        private String AñosExperiencia;
+        private string identificacionMedico;
+        private string nombres;
+        private string apellidos;
+        private string especialidad;
+        private int salarioPorCita;
+        private string añosExperiencia;
 
         public Medico(string identificacionMedico, string nombres, string apellidos, string especialidad, 
                       int salarioPorCita, string añosExperiencia)
         {
-            IdentificacionMedico = identificacionMedico;
-            Nombres = nombres;
-            Apellidos = apellidos;
-            Especialidad = especialidad;
-            SalarioPorCita = salarioPorCita;
-            AñosExperiencia = añosExperiencia;
+            this.IdentificacionMedico = identificacionMedico;
+            this.Nombres = nombres;
+            this.Apellidos = apellidos;
+            this.Especialidad = especialidad;
+            this.SalarioPorCita = salarioPorCita;
+            this.AñosExperiencia = añosExperiencia;
         }
 
-        public string IdentificacionMedico1 { get => IdentificacionMedico; set => IdentificacionMedico = value; }
-        public string Nombres1 { get => Nombres; set => Nombres = value; }
-        public string Apellidos1 { get => Apellidos; set => Apellidos = value; }
-        public string Especialidad1 { get => Especialidad; set => Especialidad = value; }
-        public int SalarioPorCita1 { get => SalarioPorCita; set => SalarioPorCita = value; }
-        public string AñosExperiencia1 { get => AñosExperiencia; set => AñosExperiencia = value; }
+        public string IdentificacionMedico { get => IdentificacionMedico; set => IdentificacionMedico = value; }
+        public string Nombres { get => Nombres; set => Nombres = value; }
+        public string Apellidos { get => Apellidos; set => Apellidos = value; }
+        public string Especialidad { get => Especialidad; set => Especialidad = value; }
+        public int SalarioPorCita { get => SalarioPorCita; set => SalarioPorCita = value; }
+        public string AñosExperiencia { get => AñosExperiencia; set => AñosExperiencia = value; }
     }
 }

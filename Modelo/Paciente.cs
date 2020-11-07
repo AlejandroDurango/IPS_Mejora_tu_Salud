@@ -38,7 +38,7 @@ namespace IPS_Mejora_tu_Salud.Modelo
         public string FechaNacimiento { get => FechaNacimiento; set => FechaNacimiento = value; }
         public string Direccion { get => Direccion; set => Direccion = value; }
         public string Telefono { get => Telefono; set => Telefono = value; }
-        public string Email{ get => Email; set => Email = value; }
+        public string Email { get => Email; set => Email = value; }
         public string FechaRegistro { get => FechaRegistro; set => FechaRegistro = value; }
         public int Multas { get => Multas; set => Multas = value; }
     }
