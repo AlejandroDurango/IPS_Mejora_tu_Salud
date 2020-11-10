@@ -104,6 +104,7 @@
     <Content Include="Documentación\Requisitos.txt" />
     <Content Include="Modelo\Script-Database\CONEXIÓN SERVIDORES.txt" />
     <Content Include="Recursos\Logo.png" />
+    <None Include="Resources\Image1.bmp" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
