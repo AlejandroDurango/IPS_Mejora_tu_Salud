@@ -322,7 +322,6 @@ namespace IPS_Mejora_tu_Salud.Interfaces
             this.btn_RegistroPaciente.TabIndex = 3;
             this.btn_RegistroPaciente.Text = "Buscar";
             this.btn_RegistroPaciente.UseVisualStyleBackColor = true;
-            this.btn_RegistroPaciente.Click += new System.EventHandler(this.btn_RegistroPaciente_click);
             // 
             // txt_FechaRegistro
             // 
