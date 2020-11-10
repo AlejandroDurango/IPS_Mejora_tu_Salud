@@ -9,12 +9,12 @@ using System.Data.Sql;
 
 namespace IPS_Mejora_tu_Salud.Modelo
 {
-    class IPS
+    class  IPS
     {
         Conexion conexion = new Conexion();
 
         //Funciones para paciente-----------------------------------------------------------------------
-        public int RegistrarPaciente(Paciente paciente)
+        public  int RegistrarPaciente(Paciente paciente)
         {
             int verificacion;
             SqlConnection sqlConnection = new SqlConnection(conexion.conexion);

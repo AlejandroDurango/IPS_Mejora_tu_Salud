@@ -156,4 +156,8 @@ MENU 2 MEDICO
 	• Actualizar el nombre y el salario por cita del médico.
 	• Ver valor a pagar al médico en cualquier momento.
 
+EXCEPCIONES 
 
+System.Data.SqlClient.SqlException: 'Violation of PRIMARY KEY constraint 'PK_Paciente'. Cannot insert duplicate key in object 'dbo.Paciente'. The duplicate key value is (0).
+The statement has been terminated.'(SI IDENTIFICACION ==  ENTONCES DIGA USUARIO YA REGISTRADO
+)
