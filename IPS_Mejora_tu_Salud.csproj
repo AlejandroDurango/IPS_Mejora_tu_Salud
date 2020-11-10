@@ -60,9 +60,10 @@
       <DependentUpon>Inicio_Sesion.cs</DependentUpon>
     </Compile>
     <Compile Include="Modelo\Cita.cs" />
+    <Compile Include="Modelo\Excepciones\ExcepcionesPaciente.cs" />
     <Compile Include="Modelo\IPS.cs" />
     <Compile Include="Modelo\Conexion.cs" />
-    <Compile Include="Modelo\Excepciones\Class1.cs" />
+    <Compile Include="Modelo\Excepciones\Validaciones.cs" />
     <Compile Include="Modelo\Medico.cs" />
     <Compile Include="Modelo\Paciente.cs" />
     <Compile Include="Program.cs" />
@@ -104,6 +105,7 @@
     <Content Include="Documentación\Requisitos.txt" />
     <Content Include="Modelo\Script-Database\CONEXIÓN SERVIDORES.txt" />
     <Content Include="Recursos\Logo.png" />
+    <None Include="Resources\Image1.bmp" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
