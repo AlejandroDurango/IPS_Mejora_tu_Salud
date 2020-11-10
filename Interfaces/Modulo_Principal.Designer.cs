@@ -32,6 +32,7 @@ namespace IPS_Mejora_tu_Salud.Interfaces
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Modulo_Principal));
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.Str_CerrarSesion = new System.Windows.Forms.ToolStripMenuItem();
             this.pacientesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -44,7 +45,6 @@ namespace IPS_Mejora_tu_Salud.Interfaces
             this.Str_Buscar_Medico = new System.Windows.Forms.ToolStripMenuItem();
             this.Str_Registro_Medicos = new System.Windows.Forms.ToolStripMenuItem();
             this.actualizarDatosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.datosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.nombreYSalarioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pagosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.citasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -65,7 +65,6 @@ namespace IPS_Mejora_tu_Salud.Interfaces
             this.lbl_EmailPaciente = new System.Windows.Forms.Label();
             this.txt_Telefono = new System.Windows.Forms.TextBox();
             this.lbl_Telefono_Salario = new System.Windows.Forms.Label();
-            this.txt_Direccion = new System.Windows.Forms.TextBox();
             this.lbl_Direccion_AñosExp = new System.Windows.Forms.Label();
             this.lbl_FechaNa_Especialidad = new System.Windows.Forms.Label();
             this.txt_Apellidos = new System.Windows.Forms.TextBox();
@@ -74,12 +73,25 @@ namespace IPS_Mejora_tu_Salud.Interfaces
             this.lbl_Nombres = new System.Windows.Forms.Label();
             this.txt_Identificacion = new System.Windows.Forms.TextBox();
             this.lbl_Identificacion = new System.Windows.Forms.Label();
-            this.Txt_Años = new System.Windows.Forms.NumericUpDown();
             this.ComboEspecialidades = new System.Windows.Forms.ComboBox();
             this.txt_Salario = new System.Windows.Forms.TextBox();
+            this.Txt_Años = new System.Windows.Forms.NumericUpDown();
+            this.txt_Direccion = new System.Windows.Forms.TextBox();
             this.lblResultados = new System.Windows.Forms.Label();
             this.Logoup = new System.Windows.Forms.PictureBox();
             this.Logodown = new System.Windows.Forms.PictureBox();
+            this.Grupo_Actualizar = new System.Windows.Forms.GroupBox();
+            this.txt_up_email_nombre = new System.Windows.Forms.TextBox();
+            this.lbl_up_identificacion = new System.Windows.Forms.Label();
+            this.lbl_up_email_nombre = new System.Windows.Forms.Label();
+            this.txt_up_identificacion = new System.Windows.Forms.TextBox();
+            this.btn_up_buscar = new System.Windows.Forms.Button();
+            this.lbl_up_direccion_salario = new System.Windows.Forms.Label();
+            this.txt_up_direccion_salario = new System.Windows.Forms.TextBox();
+            this.lbl_up_telefono = new System.Windows.Forms.Label();
+            this.txt_up_telefono = new System.Windows.Forms.TextBox();
+            this.btn_Actualizar = new System.Windows.Forms.Button();
+            this.LogoDown_Mini = new System.Windows.Forms.PictureBox();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.Grupo_Buscar.SuspendLayout();
@@ -87,6 +99,8 @@ namespace IPS_Mejora_tu_Salud.Interfaces
             ((System.ComponentModel.ISupportInitialize)(this.Txt_Años)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Logoup)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Logodown)).BeginInit();
+            this.Grupo_Actualizar.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.LogoDown_Mini)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -101,14 +115,14 @@ namespace IPS_Mejora_tu_Salud.Interfaces
             this.citasToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1255, 33);
+            this.menuStrip1.Size = new System.Drawing.Size(1255, 36);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
             // Str_CerrarSesion
             // 
             this.Str_CerrarSesion.Name = "Str_CerrarSesion";
-            this.Str_CerrarSesion.Size = new System.Drawing.Size(132, 29);
+            this.Str_CerrarSesion.Size = new System.Drawing.Size(132, 32);
             this.Str_CerrarSesion.Text = "Cerrar Sesion";
             this.Str_CerrarSesion.Click += new System.EventHandler(this.Str_CerrarSesion_Click_1);
             // 
@@ -121,40 +135,41 @@ namespace IPS_Mejora_tu_Salud.Interfaces
             this.verMultasToolStripMenuItem,
             this.verCitasToolStripMenuItem});
             this.pacientesToolStripMenuItem.Name = "pacientesToolStripMenuItem";
-            this.pacientesToolStripMenuItem.Size = new System.Drawing.Size(100, 29);
+            this.pacientesToolStripMenuItem.Size = new System.Drawing.Size(100, 32);
             this.pacientesToolStripMenuItem.Text = "Pacientes";
             // 
             // Str_Buscar_Paciente
             // 
             this.Str_Buscar_Paciente.BackColor = System.Drawing.SystemColors.Control;
             this.Str_Buscar_Paciente.Name = "Str_Buscar_Paciente";
-            this.Str_Buscar_Paciente.Size = new System.Drawing.Size(242, 34);
+            this.Str_Buscar_Paciente.Size = new System.Drawing.Size(270, 34);
             this.Str_Buscar_Paciente.Text = "Buscar";
             this.Str_Buscar_Paciente.Click += new System.EventHandler(this.Str_Buscar_Paciente_Click);
             // 
             // Str_Registro_Paciente
             // 
             this.Str_Registro_Paciente.Name = "Str_Registro_Paciente";
-            this.Str_Registro_Paciente.Size = new System.Drawing.Size(242, 34);
+            this.Str_Registro_Paciente.Size = new System.Drawing.Size(270, 34);
             this.Str_Registro_Paciente.Text = "Registar";
             this.Str_Registro_Paciente.Click += new System.EventHandler(this.Str_Registro_Paciente_Click);
             // 
             // actualizarDatosToolStripMenuItem1
             // 
             this.actualizarDatosToolStripMenuItem1.Name = "actualizarDatosToolStripMenuItem1";
-            this.actualizarDatosToolStripMenuItem1.Size = new System.Drawing.Size(242, 34);
+            this.actualizarDatosToolStripMenuItem1.Size = new System.Drawing.Size(270, 34);
             this.actualizarDatosToolStripMenuItem1.Text = "Actualizar Datos";
+            this.actualizarDatosToolStripMenuItem1.Click += new System.EventHandler(this.actualizarDatosToolStripMenuItem1_Click);
             // 
             // verMultasToolStripMenuItem
             // 
             this.verMultasToolStripMenuItem.Name = "verMultasToolStripMenuItem";
-            this.verMultasToolStripMenuItem.Size = new System.Drawing.Size(242, 34);
+            this.verMultasToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
             this.verMultasToolStripMenuItem.Text = "Ver Multas";
             // 
             // verCitasToolStripMenuItem
             // 
             this.verCitasToolStripMenuItem.Name = "verCitasToolStripMenuItem";
-            this.verCitasToolStripMenuItem.Size = new System.Drawing.Size(242, 34);
+            this.verCitasToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
             this.verCitasToolStripMenuItem.Text = "Ver Citas";
             // 
             // medicosToolStripMenuItem
@@ -165,48 +180,42 @@ namespace IPS_Mejora_tu_Salud.Interfaces
             this.actualizarDatosToolStripMenuItem,
             this.pagosToolStripMenuItem});
             this.medicosToolStripMenuItem.Name = "medicosToolStripMenuItem";
-            this.medicosToolStripMenuItem.Size = new System.Drawing.Size(95, 29);
+            this.medicosToolStripMenuItem.Size = new System.Drawing.Size(95, 32);
             this.medicosToolStripMenuItem.Text = "Medicos";
             // 
             // Str_Buscar_Medico
             // 
             this.Str_Buscar_Medico.Name = "Str_Buscar_Medico";
-            this.Str_Buscar_Medico.Size = new System.Drawing.Size(195, 34);
+            this.Str_Buscar_Medico.Size = new System.Drawing.Size(270, 34);
             this.Str_Buscar_Medico.Text = "Buscar";
             this.Str_Buscar_Medico.Click += new System.EventHandler(this.Str_Buscar_Medico_Click);
             // 
             // Str_Registro_Medicos
             // 
             this.Str_Registro_Medicos.Name = "Str_Registro_Medicos";
-            this.Str_Registro_Medicos.Size = new System.Drawing.Size(195, 34);
+            this.Str_Registro_Medicos.Size = new System.Drawing.Size(270, 34);
             this.Str_Registro_Medicos.Text = "Registro";
             this.Str_Registro_Medicos.Click += new System.EventHandler(this.Str_Registro_Medicos_Click);
             // 
             // actualizarDatosToolStripMenuItem
             // 
             this.actualizarDatosToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.datosToolStripMenuItem,
             this.nombreYSalarioToolStripMenuItem});
             this.actualizarDatosToolStripMenuItem.Name = "actualizarDatosToolStripMenuItem";
-            this.actualizarDatosToolStripMenuItem.Size = new System.Drawing.Size(195, 34);
-            this.actualizarDatosToolStripMenuItem.Text = "Actualizar ";
-            // 
-            // datosToolStripMenuItem
-            // 
-            this.datosToolStripMenuItem.Name = "datosToolStripMenuItem";
-            this.datosToolStripMenuItem.Size = new System.Drawing.Size(252, 34);
-            this.datosToolStripMenuItem.Text = "Datos";
+            this.actualizarDatosToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
+            this.actualizarDatosToolStripMenuItem.Text = "Actualizar Datos";
+            this.actualizarDatosToolStripMenuItem.Click += new System.EventHandler(this.actualizarDatosToolStripMenuItem_Click);
             // 
             // nombreYSalarioToolStripMenuItem
             // 
             this.nombreYSalarioToolStripMenuItem.Name = "nombreYSalarioToolStripMenuItem";
-            this.nombreYSalarioToolStripMenuItem.Size = new System.Drawing.Size(252, 34);
+            this.nombreYSalarioToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
             this.nombreYSalarioToolStripMenuItem.Text = "Nombre y Salario";
             // 
             // pagosToolStripMenuItem
             // 
             this.pagosToolStripMenuItem.Name = "pagosToolStripMenuItem";
-            this.pagosToolStripMenuItem.Size = new System.Drawing.Size(195, 34);
+            this.pagosToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
             this.pagosToolStripMenuItem.Text = "Pagos";
             // 
             // citasToolStripMenuItem
@@ -216,7 +225,7 @@ namespace IPS_Mejora_tu_Salud.Interfaces
             this.Str_Registro_Cita,
             this.citasImcumplidasToolStripMenuItem});
             this.citasToolStripMenuItem.Name = "citasToolStripMenuItem";
-            this.citasToolStripMenuItem.Size = new System.Drawing.Size(66, 29);
+            this.citasToolStripMenuItem.Size = new System.Drawing.Size(66, 32);
             this.citasToolStripMenuItem.Text = "Citas";
             // 
             // Str_Buscar_Citas
@@ -286,9 +295,11 @@ namespace IPS_Mejora_tu_Salud.Interfaces
             this.Btn_Buscar.TabIndex = 0;
             this.Btn_Buscar.Text = "Buscar";
             this.Btn_Buscar.UseVisualStyleBackColor = true;
+            this.Btn_Buscar.Click += new System.EventHandler(this.Btn_Buscar_Click);
             // 
             // Grupo_Registro
             // 
+            this.Grupo_Registro.Controls.Add(this.LogoDown_Mini);
             this.Grupo_Registro.Controls.Add(this.DatoFechaRegistro);
             this.Grupo_Registro.Controls.Add(this.DatoFechaNacimiento);
             this.Grupo_Registro.Controls.Add(this.Btn_Registro);
@@ -297,7 +308,6 @@ namespace IPS_Mejora_tu_Salud.Interfaces
             this.Grupo_Registro.Controls.Add(this.lbl_EmailPaciente);
             this.Grupo_Registro.Controls.Add(this.txt_Telefono);
             this.Grupo_Registro.Controls.Add(this.lbl_Telefono_Salario);
-            this.Grupo_Registro.Controls.Add(this.txt_Direccion);
             this.Grupo_Registro.Controls.Add(this.lbl_Direccion_AñosExp);
             this.Grupo_Registro.Controls.Add(this.lbl_FechaNa_Especialidad);
             this.Grupo_Registro.Controls.Add(this.txt_Apellidos);
@@ -306,9 +316,10 @@ namespace IPS_Mejora_tu_Salud.Interfaces
             this.Grupo_Registro.Controls.Add(this.lbl_Nombres);
             this.Grupo_Registro.Controls.Add(this.txt_Identificacion);
             this.Grupo_Registro.Controls.Add(this.lbl_Identificacion);
-            this.Grupo_Registro.Controls.Add(this.Txt_Años);
             this.Grupo_Registro.Controls.Add(this.ComboEspecialidades);
             this.Grupo_Registro.Controls.Add(this.txt_Salario);
+            this.Grupo_Registro.Controls.Add(this.Txt_Años);
+            this.Grupo_Registro.Controls.Add(this.txt_Direccion);
             this.Grupo_Registro.Location = new System.Drawing.Point(12, 157);
             this.Grupo_Registro.Name = "Grupo_Registro";
             this.Grupo_Registro.Size = new System.Drawing.Size(369, 414);
@@ -329,10 +340,10 @@ namespace IPS_Mejora_tu_Salud.Interfaces
             // DatoFechaNacimiento
             // 
             this.DatoFechaNacimiento.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.DatoFechaNacimiento.Location = new System.Drawing.Point(168, 138);
+            this.DatoFechaNacimiento.Location = new System.Drawing.Point(176, 138);
             this.DatoFechaNacimiento.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.DatoFechaNacimiento.Name = "DatoFechaNacimiento";
-            this.DatoFechaNacimiento.Size = new System.Drawing.Size(195, 26);
+            this.DatoFechaNacimiento.Size = new System.Drawing.Size(187, 26);
             this.DatoFechaNacimiento.TabIndex = 18;
             // 
             // Btn_Registro
@@ -391,14 +402,6 @@ namespace IPS_Mejora_tu_Salud.Interfaces
             this.lbl_Telefono_Salario.Size = new System.Drawing.Size(75, 20);
             this.lbl_Telefono_Salario.TabIndex = 12;
             this.lbl_Telefono_Salario.Text = "Telefono:";
-            // 
-            // txt_Direccion
-            // 
-            this.txt_Direccion.Location = new System.Drawing.Point(91, 171);
-            this.txt_Direccion.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.txt_Direccion.Name = "txt_Direccion";
-            this.txt_Direccion.Size = new System.Drawing.Size(272, 26);
-            this.txt_Direccion.TabIndex = 11;
             // 
             // lbl_Direccion_AñosExp
             // 
@@ -474,16 +477,6 @@ namespace IPS_Mejora_tu_Salud.Interfaces
             this.lbl_Identificacion.TabIndex = 2;
             this.lbl_Identificacion.Text = "Identificación:";
             // 
-            // Txt_Años
-            // 
-            this.Txt_Años.CausesValidation = false;
-            this.Txt_Años.Location = new System.Drawing.Point(168, 173);
-            this.Txt_Años.Name = "Txt_Años";
-            this.Txt_Años.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.Txt_Años.Size = new System.Drawing.Size(195, 26);
-            this.Txt_Años.TabIndex = 5;
-            this.Txt_Años.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
             // ComboEspecialidades
             // 
             this.ComboEspecialidades.FormattingEnabled = true;
@@ -505,6 +498,24 @@ namespace IPS_Mejora_tu_Salud.Interfaces
             this.txt_Salario.Size = new System.Drawing.Size(233, 26);
             this.txt_Salario.TabIndex = 20;
             this.txt_Salario.Visible = false;
+            // 
+            // Txt_Años
+            // 
+            this.Txt_Años.CausesValidation = false;
+            this.Txt_Años.Location = new System.Drawing.Point(176, 173);
+            this.Txt_Años.Name = "Txt_Años";
+            this.Txt_Años.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.Txt_Años.Size = new System.Drawing.Size(187, 26);
+            this.Txt_Años.TabIndex = 5;
+            this.Txt_Años.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // txt_Direccion
+            // 
+            this.txt_Direccion.Location = new System.Drawing.Point(91, 171);
+            this.txt_Direccion.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txt_Direccion.Name = "txt_Direccion";
+            this.txt_Direccion.Size = new System.Drawing.Size(272, 26);
+            this.txt_Direccion.TabIndex = 11;
             // 
             // lblResultados
             // 
@@ -532,7 +543,7 @@ namespace IPS_Mejora_tu_Salud.Interfaces
             // 
             // Logodown
             // 
-            this.Logodown.BackgroundImage = global::IPS_Mejora_tu_Salud.Properties.Resources.Logo;
+            this.Logodown.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("Logodown.BackgroundImage")));
             this.Logodown.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.Logodown.InitialImage = null;
             this.Logodown.Location = new System.Drawing.Point(49, 214);
@@ -543,6 +554,133 @@ namespace IPS_Mejora_tu_Salud.Interfaces
             this.Logodown.TabStop = false;
             this.Logodown.Visible = false;
             // 
+            // Grupo_Actualizar
+            // 
+            this.Grupo_Actualizar.Controls.Add(this.btn_Actualizar);
+            this.Grupo_Actualizar.Controls.Add(this.txt_up_telefono);
+            this.Grupo_Actualizar.Controls.Add(this.lbl_up_telefono);
+            this.Grupo_Actualizar.Controls.Add(this.txt_up_direccion_salario);
+            this.Grupo_Actualizar.Controls.Add(this.lbl_up_direccion_salario);
+            this.Grupo_Actualizar.Controls.Add(this.txt_up_email_nombre);
+            this.Grupo_Actualizar.Controls.Add(this.lbl_up_identificacion);
+            this.Grupo_Actualizar.Controls.Add(this.lbl_up_email_nombre);
+            this.Grupo_Actualizar.Controls.Add(this.txt_up_identificacion);
+            this.Grupo_Actualizar.Controls.Add(this.btn_up_buscar);
+            this.Grupo_Actualizar.Location = new System.Drawing.Point(12, 51);
+            this.Grupo_Actualizar.Name = "Grupo_Actualizar";
+            this.Grupo_Actualizar.Size = new System.Drawing.Size(369, 283);
+            this.Grupo_Actualizar.TabIndex = 3;
+            this.Grupo_Actualizar.TabStop = false;
+            this.Grupo_Actualizar.Text = "Actualizar";
+            this.Grupo_Actualizar.Visible = false;
+            // 
+            // txt_up_email_nombre
+            // 
+            this.txt_up_email_nombre.Location = new System.Drawing.Point(92, 113);
+            this.txt_up_email_nombre.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txt_up_email_nombre.Name = "txt_up_email_nombre";
+            this.txt_up_email_nombre.Size = new System.Drawing.Size(271, 26);
+            this.txt_up_email_nombre.TabIndex = 22;
+            // 
+            // lbl_up_identificacion
+            // 
+            this.lbl_up_identificacion.AutoSize = true;
+            this.lbl_up_identificacion.Location = new System.Drawing.Point(7, 36);
+            this.lbl_up_identificacion.Name = "lbl_up_identificacion";
+            this.lbl_up_identificacion.Size = new System.Drawing.Size(107, 20);
+            this.lbl_up_identificacion.TabIndex = 2;
+            this.lbl_up_identificacion.Text = "Identificacion:";
+            // 
+            // lbl_up_email_nombre
+            // 
+            this.lbl_up_email_nombre.AutoSize = true;
+            this.lbl_up_email_nombre.Location = new System.Drawing.Point(9, 119);
+            this.lbl_up_email_nombre.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lbl_up_email_nombre.Name = "lbl_up_email_nombre";
+            this.lbl_up_email_nombre.Size = new System.Drawing.Size(52, 20);
+            this.lbl_up_email_nombre.TabIndex = 21;
+            this.lbl_up_email_nombre.Text = "Email:";
+            // 
+            // txt_up_identificacion
+            // 
+            this.txt_up_identificacion.Location = new System.Drawing.Point(121, 33);
+            this.txt_up_identificacion.Name = "txt_up_identificacion";
+            this.txt_up_identificacion.Size = new System.Drawing.Size(242, 26);
+            this.txt_up_identificacion.TabIndex = 1;
+            // 
+            // btn_up_buscar
+            // 
+            this.btn_up_buscar.Location = new System.Drawing.Point(264, 65);
+            this.btn_up_buscar.Name = "btn_up_buscar";
+            this.btn_up_buscar.Size = new System.Drawing.Size(90, 35);
+            this.btn_up_buscar.TabIndex = 0;
+            this.btn_up_buscar.Text = "Buscar";
+            this.btn_up_buscar.UseVisualStyleBackColor = true;
+            this.btn_up_buscar.Click += new System.EventHandler(this.btn_up_buscar_Click);
+            // 
+            // lbl_up_direccion_salario
+            // 
+            this.lbl_up_direccion_salario.AutoSize = true;
+            this.lbl_up_direccion_salario.Location = new System.Drawing.Point(9, 152);
+            this.lbl_up_direccion_salario.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lbl_up_direccion_salario.Name = "lbl_up_direccion_salario";
+            this.lbl_up_direccion_salario.Size = new System.Drawing.Size(79, 20);
+            this.lbl_up_direccion_salario.TabIndex = 23;
+            this.lbl_up_direccion_salario.Text = "Dirección:";
+            // 
+            // txt_up_direccion_salario
+            // 
+            this.txt_up_direccion_salario.Location = new System.Drawing.Point(92, 149);
+            this.txt_up_direccion_salario.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txt_up_direccion_salario.Name = "txt_up_direccion_salario";
+            this.txt_up_direccion_salario.Size = new System.Drawing.Size(270, 26);
+            this.txt_up_direccion_salario.TabIndex = 21;
+            // 
+            // lbl_up_telefono
+            // 
+            this.lbl_up_telefono.AutoSize = true;
+            this.lbl_up_telefono.Location = new System.Drawing.Point(9, 191);
+            this.lbl_up_telefono.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lbl_up_telefono.Name = "lbl_up_telefono";
+            this.lbl_up_telefono.Size = new System.Drawing.Size(75, 20);
+            this.lbl_up_telefono.TabIndex = 21;
+            this.lbl_up_telefono.Text = "Telefono:";
+            // 
+            // txt_up_telefono
+            // 
+            this.txt_up_telefono.Location = new System.Drawing.Point(92, 185);
+            this.txt_up_telefono.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txt_up_telefono.Name = "txt_up_telefono";
+            this.txt_up_telefono.Size = new System.Drawing.Size(271, 26);
+            this.txt_up_telefono.TabIndex = 22;
+            // 
+            // btn_Actualizar
+            // 
+            this.btn_Actualizar.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btn_Actualizar.AutoSize = true;
+            this.btn_Actualizar.Location = new System.Drawing.Point(139, 235);
+            this.btn_Actualizar.Name = "btn_Actualizar";
+            this.btn_Actualizar.Size = new System.Drawing.Size(90, 35);
+            this.btn_Actualizar.TabIndex = 24;
+            this.btn_Actualizar.Text = "Actualizar";
+            this.btn_Actualizar.UseVisualStyleBackColor = true;
+            this.btn_Actualizar.Click += new System.EventHandler(this.btn_Actualizar_Click);
+            // 
+            // LogoDown_Mini
+            // 
+            this.LogoDown_Mini.BackgroundImage = global::IPS_Mejora_tu_Salud.Properties.Resources.Logo;
+            this.LogoDown_Mini.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.LogoDown_Mini.InitialImage = null;
+            this.LogoDown_Mini.Location = new System.Drawing.Point(78, 207);
+            this.LogoDown_Mini.Name = "LogoDown_Mini";
+            this.LogoDown_Mini.Size = new System.Drawing.Size(205, 181);
+            this.LogoDown_Mini.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.LogoDown_Mini.TabIndex = 6;
+            this.LogoDown_Mini.TabStop = false;
+            this.LogoDown_Mini.Visible = false;
+            // 
             // Modulo_Principal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -551,12 +689,13 @@ namespace IPS_Mejora_tu_Salud.Interfaces
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1255, 583);
             this.Controls.Add(this.lblResultados);
-            this.Controls.Add(this.Grupo_Registro);
-            this.Controls.Add(this.Grupo_Buscar);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.menuStrip1);
-            this.Controls.Add(this.Logoup);
+            this.Controls.Add(this.Grupo_Registro);
             this.Controls.Add(this.Logodown);
+            this.Controls.Add(this.Logoup);
+            this.Controls.Add(this.Grupo_Buscar);
+            this.Controls.Add(this.Grupo_Actualizar);
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "Modulo_Principal";
             this.Text = "Modulo Principal";
@@ -570,6 +709,9 @@ namespace IPS_Mejora_tu_Salud.Interfaces
             ((System.ComponentModel.ISupportInitialize)(this.Txt_Años)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Logoup)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Logodown)).EndInit();
+            this.Grupo_Actualizar.ResumeLayout(false);
+            this.Grupo_Actualizar.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.LogoDown_Mini)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -588,7 +730,6 @@ namespace IPS_Mejora_tu_Salud.Interfaces
         private System.Windows.Forms.ToolStripMenuItem medicosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem Str_Buscar_Medico;
         private System.Windows.Forms.ToolStripMenuItem actualizarDatosToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem datosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem nombreYSalarioToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem citasToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem pagosToolStripMenuItem;
@@ -625,5 +766,17 @@ namespace IPS_Mejora_tu_Salud.Interfaces
         private System.Windows.Forms.TextBox txt_Salario;
         private System.Windows.Forms.PictureBox Logoup;
         private System.Windows.Forms.PictureBox Logodown;
+        private System.Windows.Forms.GroupBox Grupo_Actualizar;
+        private System.Windows.Forms.Label lbl_up_identificacion;
+        private System.Windows.Forms.TextBox txt_up_identificacion;
+        private System.Windows.Forms.Button btn_up_buscar;
+        private System.Windows.Forms.TextBox txt_up_email_nombre;
+        private System.Windows.Forms.Label lbl_up_email_nombre;
+        private System.Windows.Forms.Button btn_Actualizar;
+        private System.Windows.Forms.TextBox txt_up_telefono;
+        private System.Windows.Forms.Label lbl_up_telefono;
+        private System.Windows.Forms.TextBox txt_up_direccion_salario;
+        private System.Windows.Forms.Label lbl_up_direccion_salario;
+        private System.Windows.Forms.PictureBox LogoDown_Mini;
     }
 }

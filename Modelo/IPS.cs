@@ -9,12 +9,12 @@ using System.Data.Sql;
 
 namespace IPS_Mejora_tu_Salud.Modelo
 {
-    class IPS
+    class  IPS
     {
         Conexion conexion = new Conexion();
 
         //Funciones para paciente-----------------------------------------------------------------------
-        public int RegistrarPaciente(Paciente paciente)
+        public  int RegistrarPaciente(Paciente paciente)
         {
             int verificacion;
             SqlConnection sqlConnection = new SqlConnection(conexion.conexion);
@@ -22,7 +22,7 @@ namespace IPS_Mejora_tu_Salud.Modelo
             string query = "INSERT INTO Paciente (IdentificacionPaciente, Nombres, Apellidos," +
                            "FechaNacimiento, Direccion, Telefono, Email, FechaRegistro, Multas)" +
                            "VALUES ('" + paciente.IdentificacionPaciente + "', '" + paciente.Nombres + "'," +
-                           "'" + paciente.Apellidos + "', '"+paciente.FechaNacimiento + "', " +
+                           "'" + paciente.Apellidos + "', '"+ paciente.FechaNacimiento + "', " +
                            "'" + paciente.Direccion + "', '" + paciente.Telefono + "', '" + paciente.Email + "'," +
                            "'" + paciente.FechaRegistro + "', " + paciente.Multas + ")";
 

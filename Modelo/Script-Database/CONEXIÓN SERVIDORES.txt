@@ -1,0 +1,11 @@
+COENXIONES A LAS BASES DE DATOS (editar dependiendo de quien usa)
+
+1-cambiar en  Conexión.cs la linea 11
+
+Santiago:
+
+public String conexion = "Data Source=DESKTOP-AHHSEHI/SANTI19;Initial Catalog=IPS;Integrated Security=True";
+
+Diego:
+
+public String conexion = "Data Source=.;Initial Catalog=IPS;Integrated Security=True";

@@ -19,7 +19,7 @@ namespace IPS_Mejora_tu_Salud.Modelo
         private int multas;
 
         public Paciente(string identificacionPaciente, string nombres, string apellidos, string fechaNacimiento, 
-                        string direccion, string telefono, string email, string fechaRegistro, int multas)
+                        string direccion, string telefono, string email, string fechaRegistro)
         {
             this.IdentificacionPaciente = identificacionPaciente;
             this.Nombres = nombres;
@@ -29,17 +29,17 @@ namespace IPS_Mejora_tu_Salud.Modelo
             this.Telefono = telefono;
             this.Email = email;
             this.FechaRegistro = fechaRegistro;
-            this.Multas = multas;
+            this.Multas = 0;
         }
 
-        public string IdentificacionPaciente { get => IdentificacionPaciente; set => IdentificacionPaciente = value; }
-        public string Nombres { get => Nombres; set => Nombres = value; }
-        public string Apellidos { get => Apellidos; set => Apellidos = value; }
-        public string FechaNacimiento { get => FechaNacimiento; set => FechaNacimiento = value; }
-        public string Direccion { get => Direccion; set => Direccion = value; }
-        public string Telefono { get => Telefono; set => Telefono = value; }
-        public string Email { get => Email; set => Email = value; }
-        public string FechaRegistro { get => FechaRegistro; set => FechaRegistro = value; }
-        public int Multas { get => Multas; set => Multas = value; }
+        public string IdentificacionPaciente { get => identificacionPaciente; set => identificacionPaciente = value; }
+        public string Nombres { get => nombres; set => nombres = value; }
+        public string Apellidos { get => apellidos; set => apellidos = value; }
+        public string FechaNacimiento { get => fechaNacimiento; set => fechaNacimiento = value; }
+        public string Direccion { get => direccion; set => direccion = value; }
+        public string Telefono { get => telefono; set => telefono = value; }
+        public string Email { get => email; set => email = value; }
+        public string FechaRegistro { get => fechaRegistro; set => fechaRegistro = value; }
+        public int Multas { get => multas; set => multas = value; }
     }
 }
