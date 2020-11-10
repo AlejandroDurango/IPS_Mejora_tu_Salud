@@ -123,12 +123,27 @@ namespace IPS_Mejora_tu_Salud.Modelo
 
             string query = "INSERT INTO Cita (IdentificacionMedico, IdentificacionPaciente, FechaCita)" +
                            "VALUES ('" + cita.IdentificacionMedico + "', '" + cita.IdentificacionPaciente + "'," +
-                           "'" + cita.FechaCita + "')";
+                           "'" + Convert.ToDateTime(cita.FechaCita) + "')";
 
             verificacion = QueryVerificacion(sqlConnection, query);
             return verificacion;
         }
 
+        public DataSet verCitasIncumplidas(string identificacionPaciente)
+        {
+            SqlConnection sqlConnection = new SqlConnection(conexion.conexion);
+
+            string query = "SELECT IdentificacionPaciente, FechaCita, Verificada FROM Cita" +
+                            "WHERE IdentificacionPaciente = '" + identificacionPaciente + "' AND Verificada = 'NO'";
+
+            string mensaje = "Citas incumplidas del paciente";
+            DataSet dataSet = new DataSet();
+            
+            dataSet = QueryDataSet(sqlConnection, query, mensaje);
+            return dataSet;
+        }
+
+        // no poner estático
         public int QueryVerificacion(SqlConnection sqlConnection, string query)
         {
             int verificacion;
