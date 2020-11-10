@@ -60,7 +60,7 @@ namespace IPS_Mejora_tu_Salud.Interfaces
                 Logoup.Visible = false;
             }
         }
-        private void btn_Buscar_Click(object sender, EventArgs e)
+        private void Btn_Buscar_Click(object sender, EventArgs e)
         {
             if (Grupo_Buscar.Text == "Buscar Paciente")
             {
@@ -140,7 +140,7 @@ namespace IPS_Mejora_tu_Salud.Interfaces
                 Logoup.Visible = true;
             }
         }
-        private void btn_RegistroPaciente_click(object sender, EventArgs e)
+        private void Btn_Registro_click(object sender, EventArgs e)
         {
             if (Grupo_Registro.Text == "Registro Paciente")
             {
