@@ -22,9 +22,9 @@ namespace IPS_Mejora_tu_Salud.Modelo
             string query = "INSERT INTO Paciente (IdentificacionPaciente, Nombres, Apellidos," +
                            "FechaNacimiento, Direccion, Telefono, Email, FechaRegistro, Multas)" +
                            "VALUES ('" + paciente.IdentificacionPaciente + "', '" + paciente.Nombres + "'," +
-                           "'" + paciente.Apellidos + "', '"+paciente.FechaNacimiento + "', " +
+                           "'" + paciente.Apellidos + "', '"+ Convert.ToDateTime(paciente.FechaNacimiento) + "', " +
                            "'" + paciente.Direccion + "', '" + paciente.Telefono + "', '" + paciente.Email + "'," +
-                           "'" + paciente.FechaRegistro + "', " + paciente.Multas + ")";
+                           "'" + Convert.ToDateTime(paciente.FechaRegistro) + "', " + paciente.Multas + ")";
 
             verificacion = QueryVerificacion(sqlConnection, query);
             return verificacion;
@@ -123,12 +123,13 @@ namespace IPS_Mejora_tu_Salud.Modelo
 
             string query = "INSERT INTO Cita (IdentificacionMedico, IdentificacionPaciente, FechaCita)" +
                            "VALUES ('" + cita.IdentificacionMedico + "', '" + cita.IdentificacionPaciente + "'," +
-                           "'" + cita.FechaCita + "')";
+                           "'" + Convert.ToDateTime(cita.FechaCita) + "')";
 
             verificacion = QueryVerificacion(sqlConnection, query);
             return verificacion;
         }
 
+        // no poner estático
         public int QueryVerificacion(SqlConnection sqlConnection, string query)
         {
             int verificacion;
