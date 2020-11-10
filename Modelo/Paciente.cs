@@ -1,8 +1,11 @@
-﻿using System;
+﻿using IPS_Mejora_tu_Salud.Modelo.Excepciones;
+using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace IPS_Mejora_tu_Salud.Modelo
 {
@@ -17,29 +20,55 @@ namespace IPS_Mejora_tu_Salud.Modelo
         private string email;
         private string fechaRegistro;
         private int multas;
+        private int valorMultas;
+        private List<string> citas;
 
-        public Paciente(string identificacionPaciente, string nombres, string apellidos, string fechaNacimiento, 
-                        string direccion, string telefono, string email, string fechaRegistro, int multas)
+        public Paciente(string identificacionPaciente, string nombres, string apellidos, string fechaNacimiento,
+                        string direccion, string telefono, string email, string fechaRegistro)
         {
-            this.IdentificacionPaciente = identificacionPaciente;
-            this.Nombres = nombres;
-            this.Apellidos = apellidos;
-            this.FechaNacimiento = fechaNacimiento;
-            this.Direccion = direccion;
-            this.Telefono = telefono;
-            this.Email = email;
-            this.FechaRegistro = fechaRegistro;
-            this.Multas = multas;
+            IdentificacionPaciente = identificacionPaciente;
+            Nombres = nombres;
+            Apellidos = apellidos;
+            FechaNacimiento = fechaNacimiento;
+            Direccion = direccion;
+            Telefono = telefono;
+            Email = email;
+            FechaRegistro = fechaRegistro;
+            Multas = 0;
+            ValorMultas = 0;
+            citas = new List<string>();
         }
 
-        public string IdentificacionPaciente { get => IdentificacionPaciente; set => IdentificacionPaciente = value; }
-        public string Nombres { get => Nombres; set => Nombres = value; }
-        public string Apellidos { get => Apellidos; set => Apellidos = value; }
-        public string FechaNacimiento { get => FechaNacimiento; set => FechaNacimiento = value; }
-        public string Direccion { get => Direccion; set => Direccion = value; }
-        public string Telefono { get => Telefono; set => Telefono = value; }
-        public string Email { get => Email; set => Email = value; }
-        public string FechaRegistro { get => FechaRegistro; set => FechaRegistro = value; }
-        public int Multas { get => Multas; set => Multas = value; }
+        public string IdentificacionPaciente { get => identificacionPaciente; set => identificacionPaciente = value; }
+        public string Nombres { get => nombres; set => nombres = value; }
+        public string Apellidos { get => apellidos; set => apellidos = value; }
+        public string FechaNacimiento { get => fechaNacimiento; set => fechaNacimiento = value; }
+        public string Direccion { get => direccion; set => direccion = value; }
+        public string Telefono { get => telefono; set => telefono = value; }
+        public string Email { get => email; set => email = value; }
+        public string FechaRegistro { get => fechaRegistro; set => fechaRegistro = value; }
+        public int Multas { get => multas; set => multas = value; }
+        public int ValorMultas { get => valorMultas; set => valorMultas = value; }
+
+        //Métodos necesarios para asignar citas
+        public Boolean tieneMultas() { return (multas > 0) ? true : false; }
+        public Boolean tieneDosCitas() { return (citas.Count == 2) ? true : false; }
+        public void multarPaciente()
+        {
+            Multas += 1;
+            ValorMultas += 4000;
+        }
+        public void asignarCita(string especialidad)
+        {
+            if(!tieneDosCitas())
+            {
+                citas.Add(especialidad);
+            }
+            else
+            {
+                throw new MaximoCitasException("No se puede asignar más citas al paciente");
+            }
+        }
+        
     }
 }

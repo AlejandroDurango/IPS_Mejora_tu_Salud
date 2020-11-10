@@ -66,9 +66,10 @@
       <DependentUpon>Inicio_Sesion.cs</DependentUpon>
     </Compile>
     <Compile Include="Modelo\Cita.cs" />
+    <Compile Include="Modelo\Excepciones\ExcepcionesPaciente.cs" />
     <Compile Include="Modelo\IPS.cs" />
     <Compile Include="Modelo\Conexion.cs" />
-    <Compile Include="Modelo\Excepciones\Class1.cs" />
+    <Compile Include="Modelo\Excepciones\Validaciones.cs" />
     <Compile Include="Modelo\Medico.cs" />
     <Compile Include="Modelo\Paciente.cs" />
     <Compile Include="Program.cs" />
