@@ -55,9 +55,11 @@ namespace IPS_Mejora_tu_Salud.Interfaces
             this.Grupo_Buscar = new System.Windows.Forms.GroupBox();
             this.lbl_Documento = new System.Windows.Forms.Label();
             this.txt_documento = new System.Windows.Forms.TextBox();
-            this.btn_Buscar = new System.Windows.Forms.Button();
+            this.Btn_Buscar = new System.Windows.Forms.Button();
             this.Grupo_Registro = new System.Windows.Forms.GroupBox();
-            this.btn_Registro = new System.Windows.Forms.Button();
+            this.DatoFechaRegistro = new System.Windows.Forms.DateTimePicker();
+            this.DatoFechaNacimiento = new System.Windows.Forms.DateTimePicker();
+            this.Btn_Registro = new System.Windows.Forms.Button();
             this.lbl_FechaRegistroPaciente = new System.Windows.Forms.Label();
             this.txt_Email = new System.Windows.Forms.TextBox();
             this.lbl_EmailPaciente = new System.Windows.Forms.Label();
@@ -72,12 +74,10 @@ namespace IPS_Mejora_tu_Salud.Interfaces
             this.lbl_Nombres = new System.Windows.Forms.Label();
             this.txt_Identificacion = new System.Windows.Forms.TextBox();
             this.lbl_Identificacion = new System.Windows.Forms.Label();
-            this.DatoFechaNacimiento = new System.Windows.Forms.DateTimePicker();
-            this.DatoFechaRegistro = new System.Windows.Forms.DateTimePicker();
-            this.lblResultados = new System.Windows.Forms.Label();
-            this.ComboEspecialidades = new System.Windows.Forms.ComboBox();
             this.Txt_Años = new System.Windows.Forms.NumericUpDown();
+            this.ComboEspecialidades = new System.Windows.Forms.ComboBox();
             this.txt_Salario = new System.Windows.Forms.TextBox();
+            this.lblResultados = new System.Windows.Forms.Label();
             this.Logoup = new System.Windows.Forms.PictureBox();
             this.Logodown = new System.Windows.Forms.PictureBox();
             this.menuStrip1.SuspendLayout();
@@ -128,33 +128,33 @@ namespace IPS_Mejora_tu_Salud.Interfaces
             // 
             this.Str_Buscar_Paciente.BackColor = System.Drawing.SystemColors.Control;
             this.Str_Buscar_Paciente.Name = "Str_Buscar_Paciente";
-            this.Str_Buscar_Paciente.Size = new System.Drawing.Size(270, 34);
+            this.Str_Buscar_Paciente.Size = new System.Drawing.Size(242, 34);
             this.Str_Buscar_Paciente.Text = "Buscar";
             this.Str_Buscar_Paciente.Click += new System.EventHandler(this.Str_Buscar_Paciente_Click);
             // 
             // Str_Registro_Paciente
             // 
             this.Str_Registro_Paciente.Name = "Str_Registro_Paciente";
-            this.Str_Registro_Paciente.Size = new System.Drawing.Size(270, 34);
+            this.Str_Registro_Paciente.Size = new System.Drawing.Size(242, 34);
             this.Str_Registro_Paciente.Text = "Registar";
             this.Str_Registro_Paciente.Click += new System.EventHandler(this.Str_Registro_Paciente_Click);
             // 
             // actualizarDatosToolStripMenuItem1
             // 
             this.actualizarDatosToolStripMenuItem1.Name = "actualizarDatosToolStripMenuItem1";
-            this.actualizarDatosToolStripMenuItem1.Size = new System.Drawing.Size(270, 34);
+            this.actualizarDatosToolStripMenuItem1.Size = new System.Drawing.Size(242, 34);
             this.actualizarDatosToolStripMenuItem1.Text = "Actualizar Datos";
-
+            // 
             // verMultasToolStripMenuItem
             // 
             this.verMultasToolStripMenuItem.Name = "verMultasToolStripMenuItem";
-            this.verMultasToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
+            this.verMultasToolStripMenuItem.Size = new System.Drawing.Size(242, 34);
             this.verMultasToolStripMenuItem.Text = "Ver Multas";
             // 
             // verCitasToolStripMenuItem
             // 
             this.verCitasToolStripMenuItem.Name = "verCitasToolStripMenuItem";
-            this.verCitasToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
+            this.verCitasToolStripMenuItem.Size = new System.Drawing.Size(242, 34);
             this.verCitasToolStripMenuItem.Text = "Ver Citas";
             // 
             // medicosToolStripMenuItem
@@ -171,14 +171,14 @@ namespace IPS_Mejora_tu_Salud.Interfaces
             // Str_Buscar_Medico
             // 
             this.Str_Buscar_Medico.Name = "Str_Buscar_Medico";
-            this.Str_Buscar_Medico.Size = new System.Drawing.Size(270, 34);
+            this.Str_Buscar_Medico.Size = new System.Drawing.Size(195, 34);
             this.Str_Buscar_Medico.Text = "Buscar";
             this.Str_Buscar_Medico.Click += new System.EventHandler(this.Str_Buscar_Medico_Click);
             // 
             // Str_Registro_Medicos
             // 
             this.Str_Registro_Medicos.Name = "Str_Registro_Medicos";
-            this.Str_Registro_Medicos.Size = new System.Drawing.Size(270, 34);
+            this.Str_Registro_Medicos.Size = new System.Drawing.Size(195, 34);
             this.Str_Registro_Medicos.Text = "Registro";
             this.Str_Registro_Medicos.Click += new System.EventHandler(this.Str_Registro_Medicos_Click);
             // 
@@ -188,7 +188,7 @@ namespace IPS_Mejora_tu_Salud.Interfaces
             this.datosToolStripMenuItem,
             this.nombreYSalarioToolStripMenuItem});
             this.actualizarDatosToolStripMenuItem.Name = "actualizarDatosToolStripMenuItem";
-            this.actualizarDatosToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
+            this.actualizarDatosToolStripMenuItem.Size = new System.Drawing.Size(195, 34);
             this.actualizarDatosToolStripMenuItem.Text = "Actualizar ";
             // 
             // datosToolStripMenuItem
@@ -206,7 +206,7 @@ namespace IPS_Mejora_tu_Salud.Interfaces
             // pagosToolStripMenuItem
             // 
             this.pagosToolStripMenuItem.Name = "pagosToolStripMenuItem";
-            this.pagosToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
+            this.pagosToolStripMenuItem.Size = new System.Drawing.Size(195, 34);
             this.pagosToolStripMenuItem.Text = "Pagos";
             // 
             // citasToolStripMenuItem
@@ -222,21 +222,21 @@ namespace IPS_Mejora_tu_Salud.Interfaces
             // Str_Buscar_Citas
             // 
             this.Str_Buscar_Citas.Name = "Str_Buscar_Citas";
-            this.Str_Buscar_Citas.Size = new System.Drawing.Size(270, 34);
+            this.Str_Buscar_Citas.Size = new System.Drawing.Size(259, 34);
             this.Str_Buscar_Citas.Text = "Buscar Citas";
             this.Str_Buscar_Citas.Click += new System.EventHandler(this.Str_Buscar_Citas_Click);
             // 
             // Str_Registro_Cita
             // 
             this.Str_Registro_Cita.Name = "Str_Registro_Cita";
-            this.Str_Registro_Cita.Size = new System.Drawing.Size(270, 34);
+            this.Str_Registro_Cita.Size = new System.Drawing.Size(259, 34);
             this.Str_Registro_Cita.Text = "Registar Cita";
             this.Str_Registro_Cita.Click += new System.EventHandler(this.Str_Registro_Cita_Click);
             // 
             // citasImcumplidasToolStripMenuItem
             // 
             this.citasImcumplidasToolStripMenuItem.Name = "citasImcumplidasToolStripMenuItem";
-            this.citasImcumplidasToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
+            this.citasImcumplidasToolStripMenuItem.Size = new System.Drawing.Size(259, 34);
             this.citasImcumplidasToolStripMenuItem.Text = "Citas Imcumplidas";
             // 
             // dataGridView1
@@ -253,7 +253,7 @@ namespace IPS_Mejora_tu_Salud.Interfaces
             // 
             this.Grupo_Buscar.Controls.Add(this.lbl_Documento);
             this.Grupo_Buscar.Controls.Add(this.txt_documento);
-            this.Grupo_Buscar.Controls.Add(this.btn_Buscar);
+            this.Grupo_Buscar.Controls.Add(this.Btn_Buscar);
             this.Grupo_Buscar.Location = new System.Drawing.Point(12, 41);
             this.Grupo_Buscar.Name = "Grupo_Buscar";
             this.Grupo_Buscar.Size = new System.Drawing.Size(369, 106);
@@ -278,20 +278,20 @@ namespace IPS_Mejora_tu_Salud.Interfaces
             this.txt_documento.Size = new System.Drawing.Size(242, 26);
             this.txt_documento.TabIndex = 1;
             // 
-            // btn_Buscar
+            // Btn_Buscar
             // 
-            this.btn_Buscar.Location = new System.Drawing.Point(264, 65);
-            this.btn_Buscar.Name = "btn_Buscar";
-            this.btn_Buscar.Size = new System.Drawing.Size(90, 35);
-            this.btn_Buscar.TabIndex = 0;
-            this.btn_Buscar.Text = "Buscar";
-            this.btn_Buscar.UseVisualStyleBackColor = true;
+            this.Btn_Buscar.Location = new System.Drawing.Point(264, 65);
+            this.Btn_Buscar.Name = "Btn_Buscar";
+            this.Btn_Buscar.Size = new System.Drawing.Size(90, 35);
+            this.Btn_Buscar.TabIndex = 0;
+            this.Btn_Buscar.Text = "Buscar";
+            this.Btn_Buscar.UseVisualStyleBackColor = true;
             // 
             // Grupo_Registro
             // 
             this.Grupo_Registro.Controls.Add(this.DatoFechaRegistro);
             this.Grupo_Registro.Controls.Add(this.DatoFechaNacimiento);
-            this.Grupo_Registro.Controls.Add(this.btn_Registro);
+            this.Grupo_Registro.Controls.Add(this.Btn_Registro);
             this.Grupo_Registro.Controls.Add(this.lbl_FechaRegistroPaciente);
             this.Grupo_Registro.Controls.Add(this.txt_Email);
             this.Grupo_Registro.Controls.Add(this.lbl_EmailPaciente);
@@ -317,16 +317,34 @@ namespace IPS_Mejora_tu_Salud.Interfaces
             this.Grupo_Registro.Text = "Registro";
             this.Grupo_Registro.Visible = false;
             // 
-            // btn_Registro
+            // DatoFechaRegistro
             // 
-            this.btn_Registro.Location = new System.Drawing.Point(130, 348);
-            this.btn_Registro.Name = "btn_Registro";
-            this.btn_Registro.Size = new System.Drawing.Size(90, 35);
-            this.btn_Registro.TabIndex = 3;
-            this.btn_Registro.Text = "Registar";
-            this.btn_Registro.UseMnemonic = false;
-            this.btn_Registro.UseVisualStyleBackColor = true;
-            this.btn_Registro.Click += new System.EventHandler(this.btn_RegistroPaciente_click);
+            this.DatoFechaRegistro.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.DatoFechaRegistro.Location = new System.Drawing.Point(176, 284);
+            this.DatoFechaRegistro.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.DatoFechaRegistro.Name = "DatoFechaRegistro";
+            this.DatoFechaRegistro.Size = new System.Drawing.Size(186, 26);
+            this.DatoFechaRegistro.TabIndex = 19;
+            // 
+            // DatoFechaNacimiento
+            // 
+            this.DatoFechaNacimiento.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.DatoFechaNacimiento.Location = new System.Drawing.Point(168, 138);
+            this.DatoFechaNacimiento.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.DatoFechaNacimiento.Name = "DatoFechaNacimiento";
+            this.DatoFechaNacimiento.Size = new System.Drawing.Size(195, 26);
+            this.DatoFechaNacimiento.TabIndex = 18;
+            // 
+            // Btn_Registro
+            // 
+            this.Btn_Registro.Location = new System.Drawing.Point(130, 348);
+            this.Btn_Registro.Name = "Btn_Registro";
+            this.Btn_Registro.Size = new System.Drawing.Size(90, 35);
+            this.Btn_Registro.TabIndex = 3;
+            this.Btn_Registro.Text = "Registar";
+            this.Btn_Registro.UseMnemonic = false;
+            this.Btn_Registro.UseVisualStyleBackColor = true;
+            this.Btn_Registro.Click += new System.EventHandler(this.Btn_Registro_click);
             // 
             // lbl_FechaRegistroPaciente
             // 
@@ -456,34 +474,15 @@ namespace IPS_Mejora_tu_Salud.Interfaces
             this.lbl_Identificacion.TabIndex = 2;
             this.lbl_Identificacion.Text = "Identificación:";
             // 
-            // DatoFechaNacimiento
+            // Txt_Años
             // 
-            this.DatoFechaNacimiento.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.DatoFechaNacimiento.Location = new System.Drawing.Point(168, 138);
-            this.DatoFechaNacimiento.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.DatoFechaNacimiento.Name = "DatoFechaNacimiento";
-            this.DatoFechaNacimiento.Size = new System.Drawing.Size(195, 26);
-            this.DatoFechaNacimiento.TabIndex = 18;
-            // 
-            // DatoFechaRegistro
-            // 
-            this.DatoFechaRegistro.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.DatoFechaRegistro.Location = new System.Drawing.Point(176, 284);
-            this.DatoFechaRegistro.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.DatoFechaRegistro.Name = "DatoFechaRegistro";
-            this.DatoFechaRegistro.Size = new System.Drawing.Size(186, 26);
-            this.DatoFechaRegistro.TabIndex = 19;
-            // 
-            // lblResultados
-            // 
-            this.lblResultados.AutoSize = true;
-            this.lblResultados.Font = new System.Drawing.Font("Century", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblResultados.ForeColor = System.Drawing.Color.Blue;
-            this.lblResultados.Location = new System.Drawing.Point(411, 9);
-            this.lblResultados.Name = "lblResultados";
-            this.lblResultados.Size = new System.Drawing.Size(354, 20);
-            this.lblResultados.TabIndex = 4;
-            this.lblResultados.Text = "<- Seleccione el grupo y la acción realizar";
+            this.Txt_Años.CausesValidation = false;
+            this.Txt_Años.Location = new System.Drawing.Point(168, 173);
+            this.Txt_Años.Name = "Txt_Años";
+            this.Txt_Años.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.Txt_Años.Size = new System.Drawing.Size(195, 26);
+            this.Txt_Años.TabIndex = 5;
+            this.Txt_Años.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // ComboEspecialidades
             // 
@@ -498,16 +497,6 @@ namespace IPS_Mejora_tu_Salud.Interfaces
             this.ComboEspecialidades.TabIndex = 5;
             this.ComboEspecialidades.Visible = false;
             // 
-            // Txt_Años
-            // 
-            this.Txt_Años.CausesValidation = false;
-            this.Txt_Años.Location = new System.Drawing.Point(168, 173);
-            this.Txt_Años.Name = "Txt_Años";
-            this.Txt_Años.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.Txt_Años.Size = new System.Drawing.Size(195, 26);
-            this.Txt_Años.TabIndex = 5;
-            this.Txt_Años.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
             // txt_Salario
             // 
             this.txt_Salario.Location = new System.Drawing.Point(130, 207);
@@ -516,6 +505,17 @@ namespace IPS_Mejora_tu_Salud.Interfaces
             this.txt_Salario.Size = new System.Drawing.Size(233, 26);
             this.txt_Salario.TabIndex = 20;
             this.txt_Salario.Visible = false;
+            // 
+            // lblResultados
+            // 
+            this.lblResultados.AutoSize = true;
+            this.lblResultados.Font = new System.Drawing.Font("Century", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblResultados.ForeColor = System.Drawing.Color.Blue;
+            this.lblResultados.Location = new System.Drawing.Point(411, 9);
+            this.lblResultados.Name = "lblResultados";
+            this.lblResultados.Size = new System.Drawing.Size(354, 20);
+            this.lblResultados.TabIndex = 4;
+            this.lblResultados.Text = "<- Seleccione el grupo y la acción realizar";
             // 
             // Logoup
             // 
@@ -598,7 +598,7 @@ namespace IPS_Mejora_tu_Salud.Interfaces
         private System.Windows.Forms.GroupBox Grupo_Buscar;
         private System.Windows.Forms.Label lbl_Documento;
         private System.Windows.Forms.TextBox txt_documento;
-        private System.Windows.Forms.Button btn_Buscar;
+        private System.Windows.Forms.Button Btn_Buscar;
         private System.Windows.Forms.ToolStripMenuItem Str_Buscar_Citas;
         private System.Windows.Forms.GroupBox Grupo_Registro;
         private System.Windows.Forms.Label lbl_Identificacion;
@@ -616,7 +616,7 @@ namespace IPS_Mejora_tu_Salud.Interfaces
         private System.Windows.Forms.Label lbl_EmailPaciente;
         private System.Windows.Forms.Label lbl_FechaRegistroPaciente;
         private System.Windows.Forms.ToolStripMenuItem Str_Registro_Medicos;
-        private System.Windows.Forms.Button btn_Registro;
+        private System.Windows.Forms.Button Btn_Registro;
         private System.Windows.Forms.DateTimePicker DatoFechaRegistro;
         private System.Windows.Forms.DateTimePicker DatoFechaNacimiento;
         private System.Windows.Forms.Label lblResultados;
