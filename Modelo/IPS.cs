@@ -71,6 +71,32 @@ namespace IPS_Mejora_tu_Salud.Modelo
             return dataSet;
         }
 
+        public DataSet BuscarPaciente(string identificacionPaciente)
+        {
+            SqlConnection sqlConnection = new SqlConnection(conexion.conexion);
+
+            string query = "SELECT * FROM Paciente WHERE IdentificacionPaciente = '" + identificacionPaciente + "' ";
+
+            string mensaje = "Paciente encontrado";
+            DataSet dataSet = new DataSet();
+
+            dataSet = QueryDataSet(sqlConnection, query, mensaje);
+            return dataSet;
+        }
+
+        public DataSet BuscarTodosPacientes()
+        {
+            SqlConnection sqlConnection = new SqlConnection(conexion.conexion);
+
+            string query = "SELECT * FROM Paciente";
+
+            string mensaje = "Pacientes registrados en la IPS";
+            DataSet dataSet = new DataSet();
+
+            dataSet = QueryDataSet(sqlConnection, query, mensaje);
+            return dataSet;
+        }
+
         //Funciones para médico-----------------------------------------------------------------------
 
         public int RegistrarMedico(Medico medico)
@@ -108,6 +134,32 @@ namespace IPS_Mejora_tu_Salud.Modelo
                            "FROM Medico WHERE IdentificacionMedico = '" + identificacionMedico + "' ";
 
             string mensaje = "Salario por cita del medico";
+            DataSet dataSet = new DataSet();
+
+            dataSet = QueryDataSet(sqlConnection, query, mensaje);
+            return dataSet;
+        }
+
+        public DataSet BuscarMedico(string identificacionMedico)
+        {
+            SqlConnection sqlConnection = new SqlConnection(conexion.conexion);
+
+            string query = "SELECT * FROM Medico WHERE IdentificacionMedico = '" + identificacionMedico + "'";
+
+            string mensaje = "Medico encontrado";
+            DataSet dataSet = new DataSet();
+
+            dataSet = QueryDataSet(sqlConnection, query, mensaje);
+            return dataSet;
+        }
+
+        public DataSet BuscarTodosMedicos()
+        {
+            SqlConnection sqlConnection = new SqlConnection(conexion.conexion);
+
+            string query = "SELECT * FROM Medico";
+
+            string mensaje = "Pacientes registrados en la IPS";
             DataSet dataSet = new DataSet();
 
             dataSet = QueryDataSet(sqlConnection, query, mensaje);
