@@ -265,9 +265,10 @@ namespace IPS_Mejora_tu_Salud.Interfaces
             if (Grupo_Buscar.Text.Equals("Multas Paciente"))
             {
                 string identificacion = txt_documento.Text;
-                DataSet datasetMultas = new DataSet();
-                datasetMultas = ips.VerMultas(identificacion);
-                DataGriwView.DataSource = datasetMultas.Tables["Cantidad de multas"];
+                DataSet datasetMultas = new DataSet();               
+                datasetMultas = ips.VerMultas(identificacion);             
+                DataGriwView.DataSource = datasetMultas.Tables["Paciente"];
+               
 
             }
 
