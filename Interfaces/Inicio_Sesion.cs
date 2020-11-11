@@ -29,7 +29,7 @@ namespace IPS_Mejora_tu_Salud.Interfaces
 
         private void btn_Salir_Click(object sender, EventArgs e)
         {
-            this.Close();
+            Application.Exit(); 
         }
     }
 }
