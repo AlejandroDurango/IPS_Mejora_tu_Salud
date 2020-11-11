@@ -13,10 +13,10 @@ namespace IPS_Mejora_tu_Salud.Modelo
         private string apellidos;
         private string especialidad;
         private int salarioPorCita;
-        private string añosExperiencia;
+        private int añosExperiencia;
 
         public Medico(string identificacionMedico, string nombres, string apellidos, string especialidad, 
-                      int salarioPorCita, string añosExperiencia)
+                      int salarioPorCita, int añosExperiencia)
         {
             this.IdentificacionMedico = identificacionMedico;
             this.Nombres = nombres;
@@ -26,11 +26,11 @@ namespace IPS_Mejora_tu_Salud.Modelo
             this.AñosExperiencia = añosExperiencia;
         }
 
-        public string IdentificacionMedico { get => IdentificacionMedico; set => IdentificacionMedico = value; }
-        public string Nombres { get => Nombres; set => Nombres = value; }
-        public string Apellidos { get => Apellidos; set => Apellidos = value; }
-        public string Especialidad { get => Especialidad; set => Especialidad = value; }
-        public int SalarioPorCita { get => SalarioPorCita; set => SalarioPorCita = value; }
-        public string AñosExperiencia { get => AñosExperiencia; set => AñosExperiencia = value; }
+        public string IdentificacionMedico { get => identificacionMedico; set => identificacionMedico = value; }
+        public string Nombres { get => nombres; set => nombres = value; }
+        public string Apellidos { get => apellidos; set => apellidos = value; }
+        public string Especialidad { get => especialidad; set => especialidad = value; }
+        public int SalarioPorCita { get => salarioPorCita; set => salarioPorCita = value; }
+        public int AñosExperiencia { get => añosExperiencia; set => añosExperiencia = value; }
     }
 }

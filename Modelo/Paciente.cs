@@ -23,20 +23,19 @@ namespace IPS_Mejora_tu_Salud.Modelo
         private int valorMultas;
         private List<string> citas;
 
-        public Paciente(string identificacionPaciente, string nombres, string apellidos, string fechaNacimiento,
+
+        public Paciente(string identificacionPaciente, string nombres, string apellidos, string fechaNacimiento, 
                         string direccion, string telefono, string email, string fechaRegistro)
         {
-            IdentificacionPaciente = identificacionPaciente;
-            Nombres = nombres;
-            Apellidos = apellidos;
-            FechaNacimiento = fechaNacimiento;
-            Direccion = direccion;
-            Telefono = telefono;
-            Email = email;
-            FechaRegistro = fechaRegistro;
-            Multas = 0;
-            ValorMultas = 0;
-            citas = new List<string>();
+            this.IdentificacionPaciente = identificacionPaciente;
+            this.Nombres = nombres;
+            this.Apellidos = apellidos;
+            this.FechaNacimiento = fechaNacimiento;
+            this.Direccion = direccion;
+            this.Telefono = telefono;
+            this.Email = email;
+            this.FechaRegistro = fechaRegistro;
+            this.Multas = 0;
         }
 
         public string IdentificacionPaciente { get => identificacionPaciente; set => identificacionPaciente = value; }
@@ -48,6 +47,8 @@ namespace IPS_Mejora_tu_Salud.Modelo
         public string Email { get => email; set => email = value; }
         public string FechaRegistro { get => fechaRegistro; set => fechaRegistro = value; }
         public int Multas { get => multas; set => multas = value; }
+
+
         public int ValorMultas { get => valorMultas; set => valorMultas = value; }
 
         //Métodos necesarios para asignar citas
