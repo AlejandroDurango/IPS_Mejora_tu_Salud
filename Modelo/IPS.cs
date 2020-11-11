@@ -14,6 +14,30 @@ namespace IPS_Mejora_tu_Salud.Modelo
         Conexion conexion = new Conexion();
 
         //Funciones para paciente-----------------------------------------------------------------------
+        public DataSet BuscarTodosPacientes()
+        {
+            SqlConnection sqlConnection = new SqlConnection(conexion.conexion);
+
+            string query = "SELECT * FROM Paciente";
+
+            string mensaje = "Pacientes registrados en la IPS";
+            DataSet dataSet = new DataSet();
+
+            dataSet = QueryDataSet(sqlConnection, query, mensaje);
+            return dataSet;
+        }
+        public DataSet BuscarPaciente(string identificacionPaciente)
+        {
+            SqlConnection sqlConnection = new SqlConnection(conexion.conexion);
+
+            string query = "SELECT * FROM Paciente WHERE IdentificacionPaciente = '" + identificacionPaciente + "' ";
+
+            string mensaje = "Paciente encontrado";
+            DataSet dataSet = new DataSet();
+
+            dataSet = QueryDataSet(sqlConnection, query, mensaje);
+            return dataSet;
+        }
         public  int RegistrarPaciente(Paciente paciente)
         {
             int verificacion;
@@ -29,7 +53,6 @@ namespace IPS_Mejora_tu_Salud.Modelo
             verificacion = QueryVerificacion(sqlConnection, query);
             return verificacion;
         }
-
         public int ActualizarPaciente(string email, string direccion, string telefono, string identificacionPaciente)
         {
             int verificacion;
@@ -46,15 +69,11 @@ namespace IPS_Mejora_tu_Salud.Modelo
         {
             SqlConnection sqlConnection = new SqlConnection(conexion.conexion);
 
-            string query = "SELECT Paciente.Multas, Citas.FechaCita FROM Paciente INNER JOIN Citas ON" +
-                           "Paciente.IdentificacionPaciente = Citas.IdentificacionPaciente" +
-                           "WHERE IdentificacionPaciente = '" + identificacionPaciente + "' ";
+            string query = "SELECT IdentificacionPaciente, Nombres, Apellidos, Multas FROM Paciente  WHERE IdentificacionPaciente = '" + identificacionPaciente + "'";
+            
+            string mensaje = "Paciente";
 
-            string mensaje = "Cantidad de multas";
-            DataSet dataSet = new DataSet();
-
-            dataSet = QueryDataSet(sqlConnection, query, mensaje);
-            return dataSet;
+            return QueryDataSet(sqlConnection, query, mensaje); 
         }
 
         public DataSet VerCitasPaciente(string identificacionPaciente)
@@ -71,31 +90,9 @@ namespace IPS_Mejora_tu_Salud.Modelo
             return dataSet;
         }
 
-        public DataSet BuscarPaciente(string identificacionPaciente)
-        {
-            SqlConnection sqlConnection = new SqlConnection(conexion.conexion);
+        
 
-            string query = "SELECT * FROM Paciente WHERE IdentificacionPaciente = '" + identificacionPaciente + "' ";
-
-            string mensaje = "Paciente encontrado";
-            DataSet dataSet = new DataSet();
-
-            dataSet = QueryDataSet(sqlConnection, query, mensaje);
-            return dataSet;
-        }
-
-        public DataSet BuscarTodosPacientes()
-        {
-            SqlConnection sqlConnection = new SqlConnection(conexion.conexion);
-
-            string query = "SELECT * FROM Paciente";
-
-            string mensaje = "Pacientes registrados en la IPS";
-            DataSet dataSet = new DataSet();
-
-            dataSet = QueryDataSet(sqlConnection, query, mensaje);
-            return dataSet;
-        }
+        
 
         //Funciones para médico-----------------------------------------------------------------------
 
