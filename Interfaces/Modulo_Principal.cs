@@ -39,7 +39,10 @@ namespace IPS_Mejora_tu_Salud.Interfaces
         //PACIENTE
         private void pacientesToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            
+            DataSet datasetMultas = new DataSet();
+            datasetMultas = ips.BuscarTodosPacientes();
+            DataGriwView.DataSource = datasetMultas.Tables["Pacientes registrados en la IPS"];
         }
         private void Str_Buscar_Paciente_Click(object sender, EventArgs e)
         {
@@ -258,7 +261,10 @@ namespace IPS_Mejora_tu_Salud.Interfaces
         {
             if (Grupo_Buscar.Text.Equals("Buscar Paciente"))
             {
-               
+                string identificacion = txt_documento.Text;
+                DataSet datasetMultas = new DataSet();
+                datasetMultas = ips.BuscarPaciente(identificacion);
+                DataGriwView.DataSource = datasetMultas.Tables["Paciente encontrado"];
 
             }
 
@@ -294,28 +300,31 @@ namespace IPS_Mejora_tu_Salud.Interfaces
         {
             if (Grupo_Registro.Text.Equals("Registro Paciente"))
             {
+                string identificacionPaciente = txt_Identificacion.Text;
+                string nombres = txt_Nombres.Text;
+                string apellidos = txt_Apellidos.Text;
+                string fechaNacimiento = DatoFechaNacimiento.Text;
+                string direccion = txt_Direccion.Text;
+                string telefono = txt_Telefono.Text;
+                string email = txt_Email.Text;
+                string fechaRegistro = DatoFechaRegistro.Text;
+
+                Paciente paciente = new Paciente(identificacionPaciente, nombres, apellidos, fechaNacimiento, direccion, telefono, email, fechaRegistro);
+                ips.RegistrarPaciente(paciente);
+
+                MessageBox.Show("Paciente Registrado Correctamente");
+
+                txt_Identificacion.Clear();
+                txt_Nombres.Clear();
+                txt_Apellidos.Clear();
+                txt_Direccion.Clear();
+                txt_Telefono.Clear();
+                txt_Email.Clear();
+
+            
                 try
                 {
-                    string identificacionPaciente = txt_Identificacion.Text;
-                    string nombres = txt_Nombres.Text;
-                    string apellidos = txt_Apellidos.Text;
-                    string fechaNacimiento = DatoFechaNacimiento.Text;
-                    string direccion = txt_Direccion.Text;
-                    string telefono = txt_Telefono.Text;
-                    string email = txt_Email.Text;
-                    string fechaRegistro = DatoFechaRegistro.Text;
-
-                    Paciente paciente = new Paciente(identificacionPaciente, nombres, apellidos, fechaNacimiento, direccion, telefono, email, fechaRegistro);
-                    ips.RegistrarPaciente(paciente);
-
-                    MessageBox.Show("Paciente Registrado Correctamente");
-
-                    txt_Identificacion.Clear();
-                    txt_Nombres.Clear();
-                    txt_Apellidos.Clear();
-                    txt_Direccion.Clear();
-                    txt_Telefono.Clear();
-                    txt_Email.Clear();
+                   
 
                 }
                 catch
