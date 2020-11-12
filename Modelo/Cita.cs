@@ -19,8 +19,8 @@ namespace IPS_Mejora_tu_Salud.Modelo
             this.FechaCita = fechaCita;
         }
 
-        public string IdentificacionMedico { get => IdentificacionMedico; set => IdentificacionMedico = value; }
-        public string IdentificacionPaciente { get => IdentificacionPaciente; set => IdentificacionPaciente = value; }
-        public string FechaCita { get => FechaCita; set => FechaCita = value; }
+        public string IdentificacionMedico { get => identificacionMedico; set => identificacionMedico = value; }
+        public string IdentificacionPaciente { get => identificacionPaciente; set => identificacionPaciente = value; }
+        public string FechaCita { get => fechaCita; set => fechaCita = value; }
     }
 }

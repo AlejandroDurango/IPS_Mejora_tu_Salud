@@ -94,6 +94,19 @@ namespace IPS_Mejora_tu_Salud.Interfaces
             this.txt_up_identificacion = new System.Windows.Forms.TextBox();
             this.btn_up_buscar = new System.Windows.Forms.Button();
             this.txt_up_nombreMedico = new System.Windows.Forms.TextBox();
+            this.GrupoCitas = new System.Windows.Forms.GroupBox();
+            this.lbl_Tipo_Cita = new System.Windows.Forms.Label();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.Btn_RegistarCita = new System.Windows.Forms.Button();
+            this.lbl_identificacionPaciente_Cita = new System.Windows.Forms.Label();
+            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.Btn_Bi = new System.Windows.Forms.Button();
+            this.lbl_identificacionMedico_Cita = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
+            this.lbl_FechaCita = new System.Windows.Forms.Label();
+            this.lbl_HoraCita = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DataGriwView)).BeginInit();
             this.Grupo_Buscar.SuspendLayout();
@@ -103,6 +116,7 @@ namespace IPS_Mejora_tu_Salud.Interfaces
             ((System.ComponentModel.ISupportInitialize)(this.Logoup)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Logodown)).BeginInit();
             this.Grupo_Actualizar.SuspendLayout();
+            this.GrupoCitas.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -124,7 +138,7 @@ namespace IPS_Mejora_tu_Salud.Interfaces
             // Str_CerrarSesion
             // 
             this.Str_CerrarSesion.Name = "Str_CerrarSesion";
-            this.Str_CerrarSesion.Size = new System.Drawing.Size(132, 32);
+            this.Str_CerrarSesion.Size = new System.Drawing.Size(132, 30);
             this.Str_CerrarSesion.Text = "Cerrar Sesion";
             this.Str_CerrarSesion.Click += new System.EventHandler(this.Str_CerrarSesion_Click_1);
             // 
@@ -137,7 +151,7 @@ namespace IPS_Mejora_tu_Salud.Interfaces
             this.verMultasToolStripMenuItem,
             this.verCitasToolStripMenuItem});
             this.pacientesToolStripMenuItem.Name = "pacientesToolStripMenuItem";
-            this.pacientesToolStripMenuItem.Size = new System.Drawing.Size(100, 32);
+            this.pacientesToolStripMenuItem.Size = new System.Drawing.Size(100, 30);
             this.pacientesToolStripMenuItem.Text = "Pacientes";
             this.pacientesToolStripMenuItem.Click += new System.EventHandler(this.pacientesToolStripMenuItem_Click);
             // 
@@ -185,7 +199,7 @@ namespace IPS_Mejora_tu_Salud.Interfaces
             this.actualizarDatosToolStripMenuItem,
             this.pagosToolStripMenuItem});
             this.medicosToolStripMenuItem.Name = "medicosToolStripMenuItem";
-            this.medicosToolStripMenuItem.Size = new System.Drawing.Size(95, 32);
+            this.medicosToolStripMenuItem.Size = new System.Drawing.Size(95, 30);
             this.medicosToolStripMenuItem.Text = "Medicos";
             this.medicosToolStripMenuItem.Click += new System.EventHandler(this.medicosToolStripMenuItem_Click);
             // 
@@ -223,8 +237,9 @@ namespace IPS_Mejora_tu_Salud.Interfaces
             this.Str_Registro_Cita,
             this.citasImcumplidasToolStripMenuItem});
             this.citasToolStripMenuItem.Name = "citasToolStripMenuItem";
-            this.citasToolStripMenuItem.Size = new System.Drawing.Size(66, 32);
+            this.citasToolStripMenuItem.Size = new System.Drawing.Size(66, 30);
             this.citasToolStripMenuItem.Text = "Citas";
+            this.citasToolStripMenuItem.Click += new System.EventHandler(this.citasToolStripMenuItem_Click);
             // 
             // Str_Buscar_Citas
             // 
@@ -713,6 +728,140 @@ namespace IPS_Mejora_tu_Salud.Interfaces
             this.txt_up_nombreMedico.Visible = false;
             this.txt_up_nombreMedico.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_up_nombre_KeyPress);
             // 
+            // GrupoCitas
+            // 
+            this.GrupoCitas.Controls.Add(this.lbl_HoraCita);
+            this.GrupoCitas.Controls.Add(this.lbl_FechaCita);
+            this.GrupoCitas.Controls.Add(this.dateTimePicker2);
+            this.GrupoCitas.Controls.Add(this.dateTimePicker1);
+            this.GrupoCitas.Controls.Add(this.textBox1);
+            this.GrupoCitas.Controls.Add(this.lbl_identificacionMedico_Cita);
+            this.GrupoCitas.Controls.Add(this.lbl_Tipo_Cita);
+            this.GrupoCitas.Controls.Add(this.comboBox1);
+            this.GrupoCitas.Controls.Add(this.Btn_RegistarCita);
+            this.GrupoCitas.Controls.Add(this.lbl_identificacionPaciente_Cita);
+            this.GrupoCitas.Controls.Add(this.textBox5);
+            this.GrupoCitas.Controls.Add(this.Btn_Bi);
+            this.GrupoCitas.Location = new System.Drawing.Point(590, 288);
+            this.GrupoCitas.Name = "GrupoCitas";
+            this.GrupoCitas.Size = new System.Drawing.Size(369, 283);
+            this.GrupoCitas.TabIndex = 27;
+            this.GrupoCitas.TabStop = false;
+            this.GrupoCitas.Text = "GrupoCitas";
+            this.GrupoCitas.Visible = false;
+            // 
+            // lbl_Tipo_Cita
+            // 
+            this.lbl_Tipo_Cita.AutoSize = true;
+            this.lbl_Tipo_Cita.Location = new System.Drawing.Point(88, 79);
+            this.lbl_Tipo_Cita.Name = "lbl_Tipo_Cita";
+            this.lbl_Tipo_Cita.Size = new System.Drawing.Size(97, 20);
+            this.lbl_Tipo_Cita.TabIndex = 27;
+            this.lbl_Tipo_Cita.Text = "Tipo de Cita:";
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Items.AddRange(new object[] {
+            "Medico General",
+            "Optometria",
+            "Pediatria"});
+            this.comboBox1.Location = new System.Drawing.Point(13, 105);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(241, 28);
+            this.comboBox1.TabIndex = 21;
+            this.comboBox1.Visible = false;
+            // 
+            // Btn_RegistarCita
+            // 
+            this.Btn_RegistarCita.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.Btn_RegistarCita.AutoSize = true;
+            this.Btn_RegistarCita.Location = new System.Drawing.Point(241, 213);
+            this.Btn_RegistarCita.Name = "Btn_RegistarCita";
+            this.Btn_RegistarCita.Size = new System.Drawing.Size(122, 50);
+            this.Btn_RegistarCita.TabIndex = 24;
+            this.Btn_RegistarCita.Text = "Registar Cita";
+            this.Btn_RegistarCita.UseVisualStyleBackColor = true;
+            // 
+            // lbl_identificacionPaciente_Cita
+            // 
+            this.lbl_identificacionPaciente_Cita.AutoSize = true;
+            this.lbl_identificacionPaciente_Cita.Location = new System.Drawing.Point(51, 27);
+            this.lbl_identificacionPaciente_Cita.Name = "lbl_identificacionPaciente_Cita";
+            this.lbl_identificacionPaciente_Cita.Size = new System.Drawing.Size(173, 20);
+            this.lbl_identificacionPaciente_Cita.TabIndex = 2;
+            this.lbl_identificacionPaciente_Cita.Text = "Identificación Paciente:";
+            // 
+            // textBox5
+            // 
+            this.textBox5.Location = new System.Drawing.Point(12, 50);
+            this.textBox5.Name = "textBox5";
+            this.textBox5.Size = new System.Drawing.Size(242, 26);
+            this.textBox5.TabIndex = 1;
+            // 
+            // Btn_Bi
+            // 
+            this.Btn_Bi.Location = new System.Drawing.Point(260, 72);
+            this.Btn_Bi.Name = "Btn_Bi";
+            this.Btn_Bi.Size = new System.Drawing.Size(90, 35);
+            this.Btn_Bi.TabIndex = 0;
+            this.Btn_Bi.Text = "Buscar";
+            this.Btn_Bi.UseVisualStyleBackColor = true;
+            // 
+            // lbl_identificacionMedico_Cita
+            // 
+            this.lbl_identificacionMedico_Cita.AutoSize = true;
+            this.lbl_identificacionMedico_Cita.Location = new System.Drawing.Point(51, 144);
+            this.lbl_identificacionMedico_Cita.Name = "lbl_identificacionMedico_Cita";
+            this.lbl_identificacionMedico_Cita.Size = new System.Drawing.Size(162, 20);
+            this.lbl_identificacionMedico_Cita.TabIndex = 28;
+            this.lbl_identificacionMedico_Cita.Text = "Identificación Medico:";
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(12, 172);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(242, 26);
+            this.textBox1.TabIndex = 29;
+            // 
+            // dateTimePicker1
+            // 
+            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dateTimePicker1.Location = new System.Drawing.Point(83, 213);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(141, 26);
+            this.dateTimePicker1.TabIndex = 30;
+            // 
+            // dateTimePicker2
+            // 
+            this.dateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Time;
+            this.dateTimePicker2.Location = new System.Drawing.Point(83, 241);
+            this.dateTimePicker2.Name = "dateTimePicker2";
+            this.dateTimePicker2.Size = new System.Drawing.Size(141, 26);
+            this.dateTimePicker2.TabIndex = 31;
+            // 
+            // lbl_FechaCita
+            // 
+            this.lbl_FechaCita.AutoSize = true;
+            this.lbl_FechaCita.Location = new System.Drawing.Point(9, 213);
+            this.lbl_FechaCita.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lbl_FechaCita.Name = "lbl_FechaCita";
+            this.lbl_FechaCita.Size = new System.Drawing.Size(58, 20);
+            this.lbl_FechaCita.TabIndex = 21;
+            this.lbl_FechaCita.Text = "Fecha:";
+            // 
+            // lbl_HoraCita
+            // 
+            this.lbl_HoraCita.AutoSize = true;
+            this.lbl_HoraCita.Location = new System.Drawing.Point(9, 243);
+            this.lbl_HoraCita.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lbl_HoraCita.Name = "lbl_HoraCita";
+            this.lbl_HoraCita.Size = new System.Drawing.Size(48, 20);
+            this.lbl_HoraCita.TabIndex = 32;
+            this.lbl_HoraCita.Text = "Hora:";
+            // 
             // Modulo_Principal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -720,13 +869,14 @@ namespace IPS_Mejora_tu_Salud.Interfaces
             this.AutoSize = true;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1255, 583);
+            this.Controls.Add(this.Grupo_Buscar);
+            this.Controls.Add(this.GrupoCitas);
             this.Controls.Add(this.lblResultados);
             this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.DataGriwView);
             this.Controls.Add(this.Grupo_Registro);
             this.Controls.Add(this.Logodown);
             this.Controls.Add(this.LogoDown_Mini);
-            this.Controls.Add(this.Grupo_Buscar);
             this.Controls.Add(this.Logoup);
             this.Controls.Add(this.Grupo_Actualizar);
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
@@ -745,6 +895,8 @@ namespace IPS_Mejora_tu_Salud.Interfaces
             ((System.ComponentModel.ISupportInitialize)(this.Logodown)).EndInit();
             this.Grupo_Actualizar.ResumeLayout(false);
             this.Grupo_Actualizar.PerformLayout();
+            this.GrupoCitas.ResumeLayout(false);
+            this.GrupoCitas.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -812,5 +964,18 @@ namespace IPS_Mejora_tu_Salud.Interfaces
         private System.Windows.Forms.PictureBox LogoDown_Mini;
         private System.Windows.Forms.TextBox txt_up_nombreMedico;
         private System.Windows.Forms.TextBox txt_up_salario_medico;
+        private System.Windows.Forms.GroupBox GrupoCitas;
+        private System.Windows.Forms.Button Btn_RegistarCita;
+        private System.Windows.Forms.Label lbl_identificacionPaciente_Cita;
+        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.Button Btn_Bi;
+        private System.Windows.Forms.Label lbl_Tipo_Cita;
+        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.Label lbl_identificacionMedico_Cita;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Label lbl_HoraCita;
+        private System.Windows.Forms.Label lbl_FechaCita;
+        private System.Windows.Forms.DateTimePicker dateTimePicker2;
+        private System.Windows.Forms.DateTimePicker dateTimePicker1;
     }
 }
