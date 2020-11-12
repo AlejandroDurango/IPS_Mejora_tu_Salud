@@ -14,6 +14,7 @@ namespace IPS_Mejora_tu_Salud.Modelo
         private string especialidad;
         private int salarioPorCita;
         private int añosExperiencia;
+        private int  citasmedicos;
 
         public Medico(string identificacionMedico, string nombres, string apellidos, string especialidad, 
                       int salarioPorCita, int añosExperiencia)
