@@ -47,8 +47,11 @@ namespace IPS_Mejora_tu_Salud.Interfaces
             this.Str_Registro_Medicos = new System.Windows.Forms.ToolStripMenuItem();
             this.actualizarDatosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pagosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.verCitasToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.citasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.Str_Buscar_Citas = new System.Windows.Forms.ToolStripMenuItem();
+            this.citapacienteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.citamedicoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.Str_Registro_Cita = new System.Windows.Forms.ToolStripMenuItem();
             this.citasImcumplidasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.DataGriwView = new System.Windows.Forms.DataGridView();
@@ -109,7 +112,6 @@ namespace IPS_Mejora_tu_Salud.Interfaces
             this.Btn_BuscarRegistroCita = new System.Windows.Forms.Button();
             this.Btn_asistio = new System.Windows.Forms.Button();
             this.btn_noasistio = new System.Windows.Forms.Button();
-            this.verCitasToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DataGriwView)).BeginInit();
             this.Grupo_Buscar.SuspendLayout();
@@ -162,35 +164,35 @@ namespace IPS_Mejora_tu_Salud.Interfaces
             // 
             this.Str_Buscar_Paciente.BackColor = System.Drawing.SystemColors.Control;
             this.Str_Buscar_Paciente.Name = "Str_Buscar_Paciente";
-            this.Str_Buscar_Paciente.Size = new System.Drawing.Size(270, 34);
+            this.Str_Buscar_Paciente.Size = new System.Drawing.Size(242, 34);
             this.Str_Buscar_Paciente.Text = "Buscar";
             this.Str_Buscar_Paciente.Click += new System.EventHandler(this.Str_Buscar_Paciente_Click);
             // 
             // Str_Registro_Paciente
             // 
             this.Str_Registro_Paciente.Name = "Str_Registro_Paciente";
-            this.Str_Registro_Paciente.Size = new System.Drawing.Size(270, 34);
+            this.Str_Registro_Paciente.Size = new System.Drawing.Size(242, 34);
             this.Str_Registro_Paciente.Text = "Registar";
             this.Str_Registro_Paciente.Click += new System.EventHandler(this.Str_Registro_Paciente_Click);
             // 
             // actualizarDatosToolStripMenuItem1
             // 
             this.actualizarDatosToolStripMenuItem1.Name = "actualizarDatosToolStripMenuItem1";
-            this.actualizarDatosToolStripMenuItem1.Size = new System.Drawing.Size(270, 34);
+            this.actualizarDatosToolStripMenuItem1.Size = new System.Drawing.Size(242, 34);
             this.actualizarDatosToolStripMenuItem1.Text = "Actualizar Datos";
             this.actualizarDatosToolStripMenuItem1.Click += new System.EventHandler(this.actualizarDatosToolStripMenuItem1_Click);
             // 
             // verMultasToolStripMenuItem
             // 
             this.verMultasToolStripMenuItem.Name = "verMultasToolStripMenuItem";
-            this.verMultasToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
+            this.verMultasToolStripMenuItem.Size = new System.Drawing.Size(242, 34);
             this.verMultasToolStripMenuItem.Text = "Ver Multas";
             this.verMultasToolStripMenuItem.Click += new System.EventHandler(this.verMultasToolStripMenuItem_Click);
             // 
             // verCitasToolStripMenuItem
             // 
             this.verCitasToolStripMenuItem.Name = "verCitasToolStripMenuItem";
-            this.verCitasToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
+            this.verCitasToolStripMenuItem.Size = new System.Drawing.Size(242, 34);
             this.verCitasToolStripMenuItem.Text = "Ver Citas";
             this.verCitasToolStripMenuItem.Click += new System.EventHandler(this.verCitasToolStripMenuItem_Click);
             // 
@@ -210,29 +212,37 @@ namespace IPS_Mejora_tu_Salud.Interfaces
             // Str_Buscar_Medico
             // 
             this.Str_Buscar_Medico.Name = "Str_Buscar_Medico";
-            this.Str_Buscar_Medico.Size = new System.Drawing.Size(270, 34);
+            this.Str_Buscar_Medico.Size = new System.Drawing.Size(242, 34);
             this.Str_Buscar_Medico.Text = "Buscar Medico";
             this.Str_Buscar_Medico.Click += new System.EventHandler(this.Str_Buscar_Medico_Click);
             // 
             // Str_Registro_Medicos
             // 
             this.Str_Registro_Medicos.Name = "Str_Registro_Medicos";
-            this.Str_Registro_Medicos.Size = new System.Drawing.Size(270, 34);
+            this.Str_Registro_Medicos.Size = new System.Drawing.Size(242, 34);
             this.Str_Registro_Medicos.Text = "Registrar";
             this.Str_Registro_Medicos.Click += new System.EventHandler(this.Str_Registro_Medicos_Click);
             // 
             // actualizarDatosToolStripMenuItem
             // 
             this.actualizarDatosToolStripMenuItem.Name = "actualizarDatosToolStripMenuItem";
-            this.actualizarDatosToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
+            this.actualizarDatosToolStripMenuItem.Size = new System.Drawing.Size(242, 34);
             this.actualizarDatosToolStripMenuItem.Text = "Actualizar Datos";
             this.actualizarDatosToolStripMenuItem.Click += new System.EventHandler(this.actualizarDatosToolStripMenuItem_Click);
             // 
             // pagosToolStripMenuItem
             // 
             this.pagosToolStripMenuItem.Name = "pagosToolStripMenuItem";
-            this.pagosToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
+            this.pagosToolStripMenuItem.Size = new System.Drawing.Size(242, 34);
             this.pagosToolStripMenuItem.Text = "Pagos";
+            this.pagosToolStripMenuItem.Click += new System.EventHandler(this.pagosToolStripMenuItem_Click);
+            // 
+            // verCitasToolStripMenuItem1
+            // 
+            this.verCitasToolStripMenuItem1.Name = "verCitasToolStripMenuItem1";
+            this.verCitasToolStripMenuItem1.Size = new System.Drawing.Size(242, 34);
+            this.verCitasToolStripMenuItem1.Text = "Ver Citas";
+            this.verCitasToolStripMenuItem1.Click += new System.EventHandler(this.verCitasToolStripMenuItem1_Click);
             // 
             // citasToolStripMenuItem
             // 
@@ -247,22 +257,38 @@ namespace IPS_Mejora_tu_Salud.Interfaces
             // 
             // Str_Buscar_Citas
             // 
+            this.Str_Buscar_Citas.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.citapacienteToolStripMenuItem,
+            this.citamedicoToolStripMenuItem});
             this.Str_Buscar_Citas.Name = "Str_Buscar_Citas";
-            this.Str_Buscar_Citas.Size = new System.Drawing.Size(270, 34);
+            this.Str_Buscar_Citas.Size = new System.Drawing.Size(259, 34);
             this.Str_Buscar_Citas.Text = "Buscar Citas";
-            this.Str_Buscar_Citas.Click += new System.EventHandler(this.Str_Buscar_Citas_Click);
+            // 
+            // citapacienteToolStripMenuItem
+            // 
+            this.citapacienteToolStripMenuItem.Name = "citapacienteToolStripMenuItem";
+            this.citapacienteToolStripMenuItem.Size = new System.Drawing.Size(178, 34);
+            this.citapacienteToolStripMenuItem.Text = "Paciente";
+            this.citapacienteToolStripMenuItem.Click += new System.EventHandler(this.citapacienteToolStripMenuItem_Click);
+            // 
+            // citamedicoToolStripMenuItem
+            // 
+            this.citamedicoToolStripMenuItem.Name = "citamedicoToolStripMenuItem";
+            this.citamedicoToolStripMenuItem.Size = new System.Drawing.Size(178, 34);
+            this.citamedicoToolStripMenuItem.Text = "Medico";
+            this.citamedicoToolStripMenuItem.Click += new System.EventHandler(this.citamedicoToolStripMenuItem_Click);
             // 
             // Str_Registro_Cita
             // 
             this.Str_Registro_Cita.Name = "Str_Registro_Cita";
-            this.Str_Registro_Cita.Size = new System.Drawing.Size(270, 34);
+            this.Str_Registro_Cita.Size = new System.Drawing.Size(259, 34);
             this.Str_Registro_Cita.Text = "Registar Cita";
             this.Str_Registro_Cita.Click += new System.EventHandler(this.Str_Registro_Cita_Click);
             // 
             // citasImcumplidasToolStripMenuItem
             // 
             this.citasImcumplidasToolStripMenuItem.Name = "citasImcumplidasToolStripMenuItem";
-            this.citasImcumplidasToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
+            this.citasImcumplidasToolStripMenuItem.Size = new System.Drawing.Size(259, 34);
             this.citasImcumplidasToolStripMenuItem.Text = "Citas Imcumplidas";
             // 
             // DataGriwView
@@ -819,6 +845,7 @@ namespace IPS_Mejora_tu_Salud.Interfaces
             this.lbl_Tipo_Cita.Size = new System.Drawing.Size(97, 20);
             this.lbl_Tipo_Cita.TabIndex = 27;
             this.lbl_Tipo_Cita.Text = "Tipo de Cita:";
+            this.lbl_Tipo_Cita.Visible = false;
             // 
             // comboBoxCitas
             // 
@@ -832,6 +859,7 @@ namespace IPS_Mejora_tu_Salud.Interfaces
             this.comboBoxCitas.Name = "comboBoxCitas";
             this.comboBoxCitas.Size = new System.Drawing.Size(241, 28);
             this.comboBoxCitas.TabIndex = 21;
+            this.comboBoxCitas.Visible = false;
             this.comboBoxCitas.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.ComboBoxCitas_KeyPress);
             // 
             // Btn_RegistarCita
@@ -895,13 +923,6 @@ namespace IPS_Mejora_tu_Salud.Interfaces
             this.btn_noasistio.UseVisualStyleBackColor = true;
             this.btn_noasistio.Visible = false;
             // 
-            // verCitasToolStripMenuItem1
-            // 
-            this.verCitasToolStripMenuItem1.Name = "verCitasToolStripMenuItem1";
-            this.verCitasToolStripMenuItem1.Size = new System.Drawing.Size(270, 34);
-            this.verCitasToolStripMenuItem1.Text = "Ver Citas";
-            this.verCitasToolStripMenuItem1.Click += new System.EventHandler(this.verCitasToolStripMenuItem1_Click);
-            // 
             // Modulo_Principal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -909,6 +930,7 @@ namespace IPS_Mejora_tu_Salud.Interfaces
             this.AutoSize = true;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1255, 583);
+            this.Controls.Add(this.Grupo_Citas);
             this.Controls.Add(this.btn_noasistio);
             this.Controls.Add(this.Btn_asistio);
             this.Controls.Add(this.lblResultados);
@@ -916,11 +938,10 @@ namespace IPS_Mejora_tu_Salud.Interfaces
             this.Controls.Add(this.DataGriwView);
             this.Controls.Add(this.Logodown);
             this.Controls.Add(this.LogoDown_Mini);
+            this.Controls.Add(this.Grupo_Registro);
             this.Controls.Add(this.Grupo_Buscar);
             this.Controls.Add(this.Logoup);
             this.Controls.Add(this.Grupo_Actualizar);
-            this.Controls.Add(this.Grupo_Registro);
-            this.Controls.Add(this.Grupo_Citas);
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "Modulo_Principal";
             this.Text = "Modulo Principal";
@@ -1022,5 +1043,7 @@ namespace IPS_Mejora_tu_Salud.Interfaces
         private System.Windows.Forms.Button Btn_asistio;
         private System.Windows.Forms.Button btn_noasistio;
         private System.Windows.Forms.ToolStripMenuItem verCitasToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem citamedicoToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem citapacienteToolStripMenuItem;
     }
 }

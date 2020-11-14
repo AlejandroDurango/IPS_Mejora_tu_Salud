@@ -12,6 +12,7 @@ namespace IPS_Mejora_tu_Salud.Modelo
     class  IPS
     {
         Conexion conexion = new Conexion();
+        
 
         //Funciones para paciente-----------------------------------------------------------------------
         public DataSet BuscarTodosPacientes()
@@ -48,7 +49,7 @@ namespace IPS_Mejora_tu_Salud.Modelo
                            "VALUES ('" + paciente.IdentificacionPaciente + "', '" + paciente.Nombres + "'," +
                            "'" + paciente.Apellidos + "', '"+ paciente.FechaNacimiento + "', " +
                            "'" + paciente.Direccion + "', '" + paciente.Telefono + "', '" + paciente.Email + "'," +
-                           "'" + paciente.FechaRegistro + "', " + paciente.Multas + ")";
+                           "'" + paciente.FechaRegistro + "')";
 
             verificacion = QueryVerificacion(sqlConnection, query);
             return verificacion;
@@ -80,21 +81,22 @@ namespace IPS_Mejora_tu_Salud.Modelo
         {
             SqlConnection sqlConnection = new SqlConnection(conexion.conexion);
 
-            string query = "SELECT Multas, IdentificacionPaciente, Nombres, Apellidos, FROM Paciente " +
-                            "WHERE Multas > 0";
+            string query = "SELECT Multas, IdentificacionPaciente, Nombres, Apellidos FROM Paciente " +
+                            "WHERE Multas > "+0+" ";
 
-            string mensaje = "Paciente";
+            string mensaje = "Todas Las multas";
 
             return QueryDataSet(sqlConnection, query, mensaje);
         }
         public DataSet VerMultasPorIdentificacion(string identificacionPaciente)
         {
+
             SqlConnection sqlConnection = new SqlConnection(conexion.conexion);
 
-            string query = "SELECT Multas, (Multas*4000) AS ValorMultas, IdentificacionPaciente, Nombres, Apellidos, FROM Paciente " +
-                            "WHERE IdentificacionPaciente = '" + identificacionPaciente + "' AND Multas > 0";
-            
-            string mensaje = "Paciente";
+            string query = "SELECT Multas, (Multas*4000) AS ValorMultas, IdentificacionPaciente, Nombres, Apellidos FROM Paciente " +
+                            "WHERE IdentificacionPaciente = '" + identificacionPaciente + "' AND Multas > "+0+"";
+
+            string mensaje = "MultaID";
 
             return QueryDataSet(sqlConnection, query, mensaje); 
         }
@@ -102,8 +104,24 @@ namespace IPS_Mejora_tu_Salud.Modelo
         {
             SqlConnection sqlConnection = new SqlConnection(conexion.conexion);
 
-            string query = "SELECT IdentificacionMedico, IdentificacionPaciente, FechaCita" +
+            string query = "SELECT IdentificacionPaciente, IdentificacionMedico, , FechaCita" +
                            "FROM Cita WHERE IdentificacionPaciente = '" +identificacionPaciente+ "' ";
+
+            string mensaje = "Citas del paciente";
+            DataSet dataSet = new DataSet();
+
+            dataSet = QueryDataSet(sqlConnection, query, mensaje);
+            return dataSet;
+        }
+        public DataSet validarcitas(string identificacionPaciente)
+        {   
+
+            SqlConnection sqlConnection = new SqlConnection(conexion.conexion);
+
+            string query = "SELECT Cita.IdentificacionPaciente, Cita.IdentificaionMedico," +
+                            "Medico.Especialidad FROM Cita INNER JOIN Medico" +
+                            "ON Cita.IdentificacionMedico = Medico.IdentificacionMedico" +
+                            "WHERE IdentificacionPaciente = '"+identificacionPaciente+"'";
 
             string mensaje = "Citas del paciente";
             DataSet dataSet = new DataSet();
@@ -165,10 +183,23 @@ namespace IPS_Mejora_tu_Salud.Modelo
         {
             SqlConnection sqlConnection = new SqlConnection(conexion.conexion);
 
-            string query = "SELECT SalarioPorCita" +
+            string query = "SELECT IdentificacionMedico,Nombres, Apellidos,Especialidad,SalarioPorCita" +
                            "FROM Medico WHERE IdentificacionMedico = '" + identificacionMedico + "' ";
 
             string mensaje = "Salario por cita del medico";
+            DataSet dataSet = new DataSet();
+
+            dataSet = QueryDataSet(sqlConnection, query, mensaje);
+            return dataSet;
+        }
+        public DataSet VerCitasMedico(string identificacionMedico)
+        {
+            SqlConnection sqlConnection = new SqlConnection(conexion.conexion);
+
+            string query = "SELECT IdentificacionMedico, IdentificacionPaciente, FechaCita" +
+                           "FROM Cita WHERE IdentificacionMedico = '" + identificacionMedico + "' ";
+
+            string mensaje = "Citas del Medico";
             DataSet dataSet = new DataSet();
 
             dataSet = QueryDataSet(sqlConnection, query, mensaje);
@@ -182,20 +213,7 @@ namespace IPS_Mejora_tu_Salud.Modelo
 
             string query = "SELECT * FROM Cita";
 
-            string mensaje = "Citas ";
-            DataSet dataSet = new DataSet();
-
-            dataSet = QueryDataSet(sqlConnection, query, mensaje);
-            return dataSet;
-        }
-
-        public DataSet VerCitasPorIdentificacion(string identificacionPaciente, string identificacionMedico)
-        {
-            SqlConnection sqlConnection = new SqlConnection(conexion.conexion);
-
-            string query = "SELECT * FROM Cita WHERE IdentificacionPaciente = '"+identificacionPaciente+"' AND IdentificacionMedico = '"+identificacionMedico+"'";
-
-            string mensaje = "Citas por identificacion";
+            string mensaje = "Citas";
             DataSet dataSet = new DataSet();
 
             dataSet = QueryDataSet(sqlConnection, query, mensaje);
