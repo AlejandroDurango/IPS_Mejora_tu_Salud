@@ -250,13 +250,15 @@ namespace IPS_Mejora_tu_Salud.Interfaces
         {
             //Ajuste Interfaz Registro Cita//
             {
+                Grupo_Citas.Text = "Registro Cita";
+                Grupo_Citas.Visible = true;
                 Grupo_Buscar.Visible = false;
-                Grupo_Registro.Text = "Registro Cita";
-                Grupo_Registro.Visible = true;
-                Logodown.Visible = false;
-                Logoup.Visible = true;
                 Grupo_Actualizar.Visible = false;
-                LogoDown_Mini.Visible = false;
+                Grupo_Registro.Visible = false;
+                Logodown.Visible = false;
+                Logoup.Visible = false;
+                LogoDown_Mini.Visible = true;
+
             }
         }
 
@@ -518,6 +520,8 @@ namespace IPS_Mejora_tu_Salud.Interfaces
         {
             validar.OnlyNumbers(e);
         }
-
+        Control
     }
+
+
 }
