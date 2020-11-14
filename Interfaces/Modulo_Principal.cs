@@ -22,6 +22,7 @@ namespace IPS_Mejora_tu_Salud.Interfaces
         Validaciones validar = new Validaciones();
         IPS ips = new IPS();
         int verificacion;
+        
 
         public Modulo_Principal()
         {
@@ -40,7 +41,8 @@ namespace IPS_Mejora_tu_Salud.Interfaces
         //PACIENTE-----------------------------------------------------------------------------------------------------
         private void pacientesToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            
+            Btn_asistio.Visible = false;
+            btn_noasistio.Visible = false;
             DataSet BuscarTodosPacientes = new DataSet();
             BuscarTodosPacientes = ips.BuscarTodosPacientes();
             DataGriwView.DataSource = BuscarTodosPacientes.Tables["Pacientes registrados en la IPS"];
@@ -50,6 +52,7 @@ namespace IPS_Mejora_tu_Salud.Interfaces
             //Ajuste Interfaz Buscar Paciente//
             {
                 Grupo_Registro.Visible = false;
+                Grupo_Citas.Visible = false;
                 Grupo_Buscar.Text = "Buscar Paciente";
                 Grupo_Buscar.Visible = true;
                 Logodown.Visible = true;
@@ -64,6 +67,7 @@ namespace IPS_Mejora_tu_Salud.Interfaces
             //Ajuste Interfaz Registro Paciente//
             {
                 Grupo_Buscar.Visible = false;
+                Grupo_Citas.Visible = false;
                 Grupo_Registro.Text = "Registro Paciente";
                 Grupo_Registro.Visible = true;
                 lbl_FechaNa_Especialidad.Text = "Fecha de Nacimiento:";
@@ -89,8 +93,8 @@ namespace IPS_Mejora_tu_Salud.Interfaces
                 txt_Direccion.Clear();
                 txt_Telefono.Clear();
                 txt_Email.Clear();
-
-
+                Btn_asistio.Visible = false;
+                btn_noasistio.Visible = false;
             }
 
         }
@@ -99,6 +103,7 @@ namespace IPS_Mejora_tu_Salud.Interfaces
             //Ajuste Interfaz Actualizar Datos Paciente
             {
                 Grupo_Buscar.Visible = false;
+                Grupo_Citas.Visible = false;
                 Grupo_Registro.Visible = false;
                 Logodown.Visible = false;
                 Logoup.Visible = false;
@@ -117,6 +122,8 @@ namespace IPS_Mejora_tu_Salud.Interfaces
                 txt_up_email.Clear();
                 txt_up_direccion.Clear();
                 txt_up_telefono.Clear();
+                Btn_asistio.Visible = false;
+                btn_noasistio.Visible = false;
             }
         }
         private void verMultasToolStripMenuItem_Click(object sender, EventArgs e)
@@ -124,6 +131,7 @@ namespace IPS_Mejora_tu_Salud.Interfaces
             //Ajuste Interfaz Multas Paciente//
             {
                 Grupo_Registro.Visible = false;
+                Grupo_Citas.Visible = false;
                 Grupo_Buscar.Text = "Multas Paciente";
                 Grupo_Buscar.Visible = true;
                 Logodown.Visible = true;
@@ -131,6 +139,8 @@ namespace IPS_Mejora_tu_Salud.Interfaces
                 Grupo_Actualizar.Visible = false;
                 LogoDown_Mini.Visible = false;
                 txt_documento.Clear();
+                Btn_asistio.Visible = false;
+                btn_noasistio.Visible = false;
             }
         }
         private void verCitasToolStripMenuItem_Click(object sender, EventArgs e)
@@ -138,6 +148,7 @@ namespace IPS_Mejora_tu_Salud.Interfaces
             //Ajuste Interfaz Ver_Citas Paciente//
             {
                 Grupo_Registro.Visible = false;
+                Grupo_Citas.Visible = false;
                 Grupo_Buscar.Text = "Citas Paciente";
                 Grupo_Buscar.Visible = true;
                 Logodown.Visible = true;
@@ -145,12 +156,16 @@ namespace IPS_Mejora_tu_Salud.Interfaces
                 Grupo_Actualizar.Visible = false;
                 LogoDown_Mini.Visible = false;
                 txt_documento.Clear();
+                Btn_asistio.Visible = true;
+                btn_noasistio.Visible = true;
             }
         }
 
         //MEDICO-----------------------------------------------------------------------------------------------------
         private void medicosToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            Btn_asistio.Visible = false;
+            btn_noasistio.Visible = false;
             DataSet BuscarTodosMedicos = new DataSet();
             BuscarTodosMedicos = ips.BuscarTodosMedicos();
             DataGriwView.DataSource = BuscarTodosMedicos.Tables["Medicos registrados en la IPS"];
@@ -160,6 +175,7 @@ namespace IPS_Mejora_tu_Salud.Interfaces
             //Ajuste Interfaz Buscar Medico//
             {
                 Grupo_Registro.Visible = false;
+                Grupo_Citas.Visible = false;
                 Grupo_Buscar.Text = "Buscar Medico";
                 Grupo_Buscar.Visible = true;
                 Logodown.Visible = true;
@@ -167,6 +183,8 @@ namespace IPS_Mejora_tu_Salud.Interfaces
                 Grupo_Actualizar.Visible = false;
                 LogoDown_Mini.Visible = false;
                 txt_documento.Clear();
+                Btn_asistio.Visible = false;
+                btn_noasistio.Visible = false;
             }
         }
         private void Str_Registro_Medicos_Click(object sender, EventArgs e)
@@ -174,6 +192,7 @@ namespace IPS_Mejora_tu_Salud.Interfaces
             //Ajuste Interfaz Registro Medicos//
             {
                 Grupo_Buscar.Visible = false;
+                Grupo_Citas.Visible = false;
                 Grupo_Registro.Text = "Registro Medico";
                 Grupo_Registro.Visible = true;
                 lbl_FechaNa_Especialidad.Text = "Especialidad";
@@ -199,6 +218,8 @@ namespace IPS_Mejora_tu_Salud.Interfaces
                 ComboEspecialidades.Text = "";
                 txt_Salario.Clear();
                 Txt_Años.Value = 0;
+                Btn_asistio.Visible = false;
+                btn_noasistio.Visible = false;
             }
         }
         private void actualizarDatosToolStripMenuItem_Click(object sender, EventArgs e)
@@ -207,6 +228,7 @@ namespace IPS_Mejora_tu_Salud.Interfaces
             {
                 Grupo_Buscar.Visible = false;
                 Grupo_Registro.Visible = false;
+                Grupo_Citas.Visible = false;
                 Logodown.Visible = false;
                 Logoup.Visible = false;
                 Grupo_Actualizar.Visible = true;
@@ -223,20 +245,43 @@ namespace IPS_Mejora_tu_Salud.Interfaces
                 txt_up_identificacion.Clear();
                 txt_up_salario_medico.Clear();
                 txt_up_nombreMedico.Clear();
-
+                Btn_asistio.Visible = false;
+                btn_noasistio.Visible = false;
+            }
+        }
+        private void verCitasToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            //Ajuste Interfaz Ver_Citas Paciente//
+            {
+                Grupo_Registro.Visible = false;
+                Grupo_Citas.Visible = false;
+                Grupo_Buscar.Text = "Citas Medico";
+                Grupo_Buscar.Visible = true;
+                Logodown.Visible = true;
+                Logoup.Visible = false;
+                Grupo_Actualizar.Visible = false;
+                LogoDown_Mini.Visible = false;
+                txt_documento.Clear();
+                Btn_asistio.Visible = true;
+                btn_noasistio.Visible = true;
             }
         }
 
         //CITAS-----------------------------------------------------------------------------------------------------
         private void citasToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            {
+                Grupo_Citas.Visible = false;
+                Btn_asistio.Visible = false;
+                btn_noasistio.Visible = false;
+            }
         }
         private void Str_Buscar_Citas_Click(object sender, EventArgs e)
         {
             //Ajuste Interfaz Buscar Citas//
             {
                 Grupo_Registro.Visible = false;
+                Grupo_Citas.Visible = false;
                 Grupo_Buscar.Text = "Buscar Cita";
                 Grupo_Buscar.Visible = true;
                 Logodown.Visible = true;
@@ -244,6 +289,8 @@ namespace IPS_Mejora_tu_Salud.Interfaces
                 Grupo_Actualizar.Visible = false;
                 LogoDown_Mini.Visible = false;
                 txt_documento.Clear();
+                Btn_asistio.Visible = true;
+                btn_noasistio.Visible = true;
             }
         }
         private void Str_Registro_Cita_Click(object sender, EventArgs e)
@@ -258,7 +305,18 @@ namespace IPS_Mejora_tu_Salud.Interfaces
                 Logodown.Visible = false;
                 Logoup.Visible = false;
                 LogoDown_Mini.Visible = true;
-
+                lbl_identificacionMedico_Cita.Visible = false;
+                txt_identificacion_medico_cita.Visible = false;
+                lbl_FechaCita.Visible = false;
+                lbl_HoraCita.Visible = false;
+                Datatime_cita.Visible = false;
+                Datatime2_cita.Visible = false;
+                Btn_RegistarCita.Visible = false;
+                txt_identificacionPacienteCita.Clear();
+                comboBoxCitas.Text = "";
+                txt_identificacion_medico_cita.Clear();
+                Btn_asistio.Visible = false;
+                btn_noasistio.Visible = false;
             }
         }
 
@@ -280,16 +338,22 @@ namespace IPS_Mejora_tu_Salud.Interfaces
                 DataSet DatasetMultas = new DataSet();
                 DatasetMultas = ips.VerMultas(identificacion);             
                 DataGriwView.DataSource = DatasetMultas.Tables["Paciente"];
-               
-
             }
 
             if (Grupo_Buscar.Text.Equals("Citas Paciente"))
             {
                 string identificacion = txt_documento.Text;
+                DataSet actualizar = new DataSet();
+                actualizar = ips.VerCitasPaciente(identificacion);
+                DataGriwView.DataSource = actualizar.Tables["Citas del paciente"];
+            }
+
+            if (Grupo_Buscar.Text.Equals("Citas Medico"))
+            {
+                string identificacion = txt_documento.Text;
                 DataSet datasetMultas = new DataSet();
-                datasetMultas = ips.VerCitasPaciente(identificacion);
-                DataGriwView.DataSource = datasetMultas.Tables["Citas del paciente"];
+                //datasetMultas = ips.VercitasMedico(identificacion);
+                //DataGriwView.DataSource = datasetMultas.Tables["Citas del paciente"];
             }
 
             if (Grupo_Buscar.Text == "Buscar Medico")
@@ -444,84 +508,118 @@ namespace IPS_Mejora_tu_Salud.Interfaces
             }
 
         }
+        private void Btn_BuscarRegistroCita_Click(object sender, EventArgs e)
+        {
+            string IdentificacionPaciente = txt_identificacionPacienteCita.Text;
+            string Especialidad = comboBoxCitas.Text;
+
+
+            {
+                lbl_identificacionMedico_Cita.Visible = true;
+                txt_identificacion_medico_cita.Visible = true;
+                lbl_FechaCita.Visible = true;
+                lbl_HoraCita.Visible = true;
+                Datatime_cita.Visible = true;
+                Datatime2_cita.Visible = true;
+                Btn_RegistarCita.Visible = true;
+            }
+        }
+        private void Btn_RegistarCita_Click(object sender, EventArgs e)
+        {
+            string IdentificacionPaciente = txt_identificacionPacienteCita.Text;
+            string Especialidad = comboBoxCitas.Text;
+            string IdentificacionMedico = txt_identificacion_medico_cita.Text;
+            string FechaCita = Datatime_cita.Text;
+            string HoraCita = Datatime2_cita.Text;
+            Cita cita = new Cita(IdentificacionMedico,IdentificacionPaciente,FechaCita);
+            int verificacion = ips.RegistarCita(cita);
+
+            if (verificacion == 1)
+            {
+                MessageBox.Show("Cita Registrada Correctamente");
+                DataSet Actualizarcitas = new DataSet();
+                //Actualizarcitas = ips.BuscarCitas(IdentificacionPaciente);
+                DataGriwView.DataSource = Actualizarcitas.Tables["Paciente encontrado"];
+                txt_identificacionPacienteCita.Clear();
+                comboBoxCitas.Text = "";
+                txt_identificacion_medico_cita.Clear();
+            }
+
+        }
 
         //Validaciones-----------------------------------------------------------------------------------------------------
         private void txt_documento_KeyPress(object sender, KeyPressEventArgs e)
         {
             validar.OnlyNumbers(e);
         }
-
         private void txt_Identificacion_KeyPress(object sender, KeyPressEventArgs e)
         {
             validar.OnlyNumbers(e);
         }
-
         private void txt_Nombres_KeyPress(object sender, KeyPressEventArgs e)
         {
             validar.OnlyLetters(e);
         }
-
         private void txt_Apellidos_KeyPress(object sender, KeyPressEventArgs e)
         {
             validar.OnlyLetters(e);
         }
-
         private void DatoFechaNacimiento_KeyPress(object sender, KeyPressEventArgs e)
         {
             validar.OnlyNumbers(e);
         }
-
         private void ComboEspecialidades_KeyPress(object sender, KeyPressEventArgs e)
         {
             validar.OnlyLetters(e);
         }
-
         private void txt_Direccion_KeyPress(object sender, KeyPressEventArgs e)
         {
             validar.OnlyLetters(e);
         }
-
         private void Txt_Años_KeyPress(object sender, KeyPressEventArgs e)
         {
             validar.OnlyNumbers(e);
         }
-
         private void txt_Telefono_KeyPress(object sender, KeyPressEventArgs e)
         {
             validar.OnlyNumbers(e);
         }
-
         private void txt_up_identificacion_KeyPress(object sender, KeyPressEventArgs e)
         {
             validar.OnlyNumbers(e);
         }
-
         private void txt_up_telefono_KeyPress(object sender, KeyPressEventArgs e)
         {
             validar.OnlyNumbers(e);
         }
-
         private void txt_up_nombre_KeyPress(object sender, KeyPressEventArgs e)
         {
             validar.OnlyLetters(e);
         }
-
         private void txt_up_salario_KeyPress(object sender, KeyPressEventArgs e)
         {
             validar.OnlyNumbers(e);
         }
-
         private void txt_documento_KeyPress_1(object sender, KeyPressEventArgs e)
         {
             validar.OnlyNumbers(e);
         }
-
         private void txt_Salario_KeyPress(object sender, KeyPressEventArgs e)
         {
             validar.OnlyNumbers(e);
         }
-        Control
+        private void txt_identificacionPacienteCita_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            validar.OnlyNumbers(e);
+        }
+        private void ComboBoxCitas_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            validar.OnlyLetters(e);
+        }
+        private void txt_identificacion_medico_cita_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            validar.OnlyNumbers(e);
+        }
+
     }
-
-
 }
