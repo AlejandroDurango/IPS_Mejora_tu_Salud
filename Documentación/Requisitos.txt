@@ -1,46 +1,6 @@
 IPS “MEJORA TU SALUD"
 			++++BACKEND+++
 USUARIOS
-
-
-
-MEDICOS:
-FORMA 1
-• Especialidad (Médico general, optómetra, pediatra)
-Médico general
-	• Cédula (único 
-	• Nombres
-	• Apellidos
-	• Salario por cita.
-	• Años de experiencia
-	• Numero de citas =2
-
-
-Optometria
-	• Cédula (único 
-	• Nombres
-	• Apellidos
-	• Salario por cita.
-	• Años de experiencia
-	• Numero de citas
-
-Pediatria
-	• Cédula (único )
-	• Nombres
-	• Apellidos
-	• Salario por cita.
-	• Años de experiencia
-	• Numero de citas
-
-FORMA 2 
-0
-	• Cédula (único )
-	• Nombres
-	• Apellidos
-	• Especialidad (Médico general, optómetra, pediatra)
-	• Salario por cita.
-	• Años de experiencia
-
 PACIENTES
 FORMULARIO REGISTRO
 	• Número de identificación (único)
@@ -50,8 +10,27 @@ FORMULARIO REGISTRO
 	• Dirección
 	• Teléfono
 	• Email
-	• Fecha de registro +
-	*citas:[1,2]
+	• Fecha de registro 
+	*Citas[]
+
+MEDICOS:
+FORMULARIO REGISTRO
+	• Cédula (único )
+	• Nombres
+	• Apellidos
+	• Especialidad (Médico general, optómetra, pediatra)
+	• Salario por cita.
+	• Años de experiencia
+	•Citas[]
+
+CITAS:
+FORMULARIO REGISTRO
+	• Cédula (único )
+	• Nombres
+	• Apellidos
+	• Especialidad (Médico general, optómetra, pediatra)
+	• Salario por cita.
+	• Años de experiencia
 
 *MULTAS== 0:
 	(SI MULTAS ==0 ERNTONCES CLIENTE PAZ Y SALVO) asigna cita
@@ -85,16 +64,6 @@ x
 SI ARRELGO .SIZE =2
 	el Paciente ya tiene 2 citas asignadas no se le puede asiganr 
 
-		
-
-
-				
--ACTUALZIAR DATOS: PACIENTE BUSCADO LLEVELE
-	• Dirección = DIRECION NUEVA
-	• Teléfono =TELEFONO NUEVO	
-	• Email == EMAIL NUEVO
-
-
 			++++FRONTEND+++++
 
 BUENAS PRACTICAS
@@ -115,7 +84,7 @@ MENU PRINCIPAL PARA IPS
 
 
 MENÚ 1  -- PACIENTE
--BUSCAR Texbox escribir el apciente
+-BUSCAR Texbox 
 	-VERIFICA SI PACIENTE REGISTRA(PRIMARY KEY PACIENTE)
 
 -REGISTRAR PACIENTE:
@@ -129,32 +98,29 @@ MENÚ 1  -- PACIENTE
 	• Email
 	• Fecha de registro 
 	
-MENU1.1 
-	-ACTUALZIAR DATOS:
-		• Dirección
-		• Teléfono
-		• Email
+-ACTUALZIAR DATOS:
+	• Dirección
+	• Teléfono
+	• Email
 
-	-VER MULTAS DEL PACIENTE 1 
-		• Ver las citas incumplidas.PREGUNTA¡? pago multa
+-VER MULTAS DEL PACIENTE 1 
+	• Ver las citas incumplidas.PREGUNTA¡? pago multa
 
-	-MENÚ 1.1.1 CITAS
+
+MENÚ 2 MEDICO
+	-REGISTRO MEDICO
+	• Actualizar el nombre y el salario por cita del médico.
+	• Ver valor a pagar al médico en cualquier momento.
+
+-MENÚ 3 CITAS
+	•Buscar Cita(identificacion)	
 	• Registrar Cita	
-		-VERIFICA PAZ Y SALVO()
-		-CITAS DISPONIBLES
-		-tipo cita
+		-VERIFICA PAZ Y SALVO(identificacion paciente) 
+		-tipo cita (trae lista doctores)	
 		-medico 
 		-paciente 
 		-fecha cita 
 	-VER CITAS DE PACIENTE (muyestra el puto arreglo) CUMPLIDO NO CUMPLIDO SE VA ABAJO 
-
-	
-
-
-MENU 2 MEDICO
-	-REGISTRO MEDICO
-	• Actualizar el nombre y el salario por cita del médico.
-	• Ver valor a pagar al médico en cualquier momento.
 
 EXCEPCIONES 
 
