@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Drawing.Text;
 using System.Linq;
@@ -463,33 +464,45 @@ namespace IPS_Mejora_tu_Salud.Interfaces
         {
             if (Grupo_Registro.Text.Equals("Registro Paciente"))
             {
-                string identificacionPaciente = txt_Identificacion.Text;
-                string nombres = txt_Nombres.Text;
-                string apellidos = txt_Apellidos.Text;
-                string fechaNacimiento = DatoFechaNacimiento.Text;
-                string direccion = txt_Direccion.Text;
-                string telefono = txt_Telefono.Text;
-                string email = txt_Email.Text;
-                string fechaRegistro = DatoFechaRegistro.Text;
-
-                Paciente paciente = new Paciente(identificacionPaciente, nombres, apellidos, fechaNacimiento, direccion, telefono, email, fechaRegistro);
-                verificacion = ips.RegistrarPaciente(paciente);
-
-                if (verificacion == 1)
-                {
-                    MessageBox.Show("Paciente Registrado Correctamente");
-                    txt_Identificacion.Clear();
-                    txt_Nombres.Clear();
-                    txt_Apellidos.Clear();
-                    txt_Direccion.Clear();
-                    txt_Telefono.Clear();
-                    txt_Email.Clear();
-                }
-                else
+                try
                 {
 
-                }
+                    string identificacionPaciente = txt_Identificacion.Text;
+                    string nombres = txt_Nombres.Text;
+                    string apellidos = txt_Apellidos.Text;
+                    string fechaNacimiento = DatoFechaNacimiento.Text;
+                    string direccion = txt_Direccion.Text;
+                    string telefono = txt_Telefono.Text;
+                    string email = txt_Email.Text;
+                    string fechaRegistro = DatoFechaRegistro.Text;
 
+                    Paciente paciente = new Paciente(identificacionPaciente, nombres, apellidos, fechaNacimiento, direccion, telefono, email, fechaRegistro);
+                    verificacion = ips.RegistrarPaciente(paciente);
+
+                    if (verificacion == 1)
+                    {
+                        MessageBox.Show("Paciente Registrado Correctamente");
+                        txt_Identificacion.Clear();
+                        txt_Nombres.Clear();
+                        txt_Apellidos.Clear();
+                        txt_Direccion.Clear();
+                        txt_Telefono.Clear();
+                        txt_Email.Clear();
+                    }
+                    else
+                    {
+                        throw new RegistroNoExitosoException("¡ERROR! Registro no efectuado, verifica nuevamente");
+                    }
+                }
+                catch(RegistroNoExitosoException ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+                catch(SqlException ex)
+                {
+                    MessageBox.Show(ex.Message);
+                    //¡ERROR! Por ingrese todos los datos requeridos"
+                }
 
 
             }

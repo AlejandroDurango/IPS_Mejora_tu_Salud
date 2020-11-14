@@ -16,4 +16,5 @@ namespace IPS_Mejora_tu_Salud.Modelo.Excepciones
     }
 
     class CamposVaciosException : ProgramaException { public CamposVaciosException(string mensaje) : base(mensaje) {} }
+    class RegistroNoExitosoException : ProgramaException { public RegistroNoExitosoException(string mensaje) : base(mensaje) {} }
 }
