@@ -49,7 +49,7 @@ namespace IPS_Mejora_tu_Salud.Modelo
                            "VALUES ('" + paciente.IdentificacionPaciente + "', '" + paciente.Nombres + "'," +
                            "'" + paciente.Apellidos + "', '"+ paciente.FechaNacimiento + "', " +
                            "'" + paciente.Direccion + "', '" + paciente.Telefono + "', '" + paciente.Email + "'," +
-                           "'" + paciente.FechaRegistro + "')";
+                           "'" + paciente.FechaRegistro + "', "+paciente.Multas+")";
 
             verificacion = QueryVerificacion(sqlConnection, query);
             return verificacion;
