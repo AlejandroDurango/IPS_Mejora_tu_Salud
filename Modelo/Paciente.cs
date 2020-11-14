@@ -19,6 +19,7 @@ namespace IPS_Mejora_tu_Salud.Modelo
         private string telefono;
         private string email;
         private string fechaRegistro;
+        private int multas;
         private int numeroCitas;
 
 
@@ -34,6 +35,7 @@ namespace IPS_Mejora_tu_Salud.Modelo
             Email = email;
             FechaRegistro = fechaRegistro;
             NumeroCitas = 0;
+            Multas = 0;
 
         }
 
@@ -46,6 +48,7 @@ namespace IPS_Mejora_tu_Salud.Modelo
         public string Email { get => email; set => email = value; }
         public string FechaRegistro { get => fechaRegistro; set => fechaRegistro = value; }
         public int NumeroCitas { get => numeroCitas; set => numeroCitas = value; }
+        public int Multas { get => multas; set => multas = value; }
 
         //Métodos necesarios para asignar citas
         public Boolean tieneDosCitas()
