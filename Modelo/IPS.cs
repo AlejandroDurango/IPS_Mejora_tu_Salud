@@ -46,15 +46,13 @@ namespace IPS_Mejora_tu_Salud.Modelo
         {
             SqlConnection sqlConnection = new SqlConnection(conexion.conexion);
 
-            string query = "SELECT Paciente.Multas, Citas.FechaCita FROM Paciente INNER JOIN Citas ON" +
-                           "Paciente.IdentificacionPaciente = Citas.IdentificacionPaciente" +
-                           "WHERE IdentificacionPaciente = '" + identificacionPaciente + "' ";
+            string query = "SELECT Paciente.Multas, Cita.FechaCita FROM Paciente INNER JOIN Cita ON" +
+                           "Paciente.IdentificacionPaciente = Cita.IdentificacionPaciente" +
+                           "WHERE Paciente.IdentificacionPaciente = '" + identificacionPaciente + "' ";
 
             string mensaje = "Cantidad de multas";
-            DataSet dataSet = new DataSet();
-
-            dataSet = QueryDataSet(sqlConnection, query, mensaje);
-            return dataSet;
+            
+            return QueryDataSet(sqlConnection, query, mensaje); 
         }
 
         public DataSet VerCitasPaciente(string identificacionPaciente)
