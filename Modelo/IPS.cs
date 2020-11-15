@@ -9,12 +9,33 @@ using System.Data.Sql;
 
 namespace IPS_Mejora_tu_Salud.Modelo
 {
-    class  IPS
+    public class  IPS
     {
         Conexion conexion = new Conexion();
-        
+        // Usuario---------------------------------------------------------------------------------
+        public bool IniciarSesion(string usuario, string contraseña)
+        {
+            SqlConnection sqlConnection = new SqlConnection(conexion.conexion);
 
-        //Funciones para paciente-----------------------------------------------------------------------
+            string query = "SELECT Usuario, Contraseña FROM Usuario_IPS WHERE Usuario = '" + usuario + "' AND Contraseña = '" + contraseña + "'";
+
+            sqlConnection.Open();
+            SqlCommand command = new SqlCommand(query, sqlConnection);
+            SqlDataReader reader = command.ExecuteReader(); 
+            
+            if(reader.Read())
+            {
+                sqlConnection.Close();
+                return true;
+            }
+            else
+            {
+                sqlConnection.Close();
+                return false;
+            }
+        }
+
+            //Funciones para paciente-----------------------------------------------------------------------
         public DataSet BuscarTodosPacientes()
         {
             SqlConnection sqlConnection = new SqlConnection(conexion.conexion);
@@ -47,14 +68,13 @@ namespace IPS_Mejora_tu_Salud.Modelo
             string query = "INSERT INTO Paciente (IdentificacionPaciente, Nombres, Apellidos," +
                            "FechaNacimiento, Direccion, Telefono, Email, FechaRegistro, Multas)" +
                            "VALUES ('" + paciente.IdentificacionPaciente + "', '" + paciente.Nombres + "'," +
-                           "'" + paciente.Apellidos + "', '"+ paciente.FechaNacimiento + "', " +
+                           "'" + paciente.Apellidos + "', "+ paciente.FechaNacimiento + ", " +
                            "'" + paciente.Direccion + "', '" + paciente.Telefono + "', '" + paciente.Email + "'," +
-                           "'" + paciente.FechaRegistro + "', "+paciente.Multas+")";
+                           "" + paciente.FechaRegistro + ", "+paciente.Multas+")";
 
             verificacion = QueryVerificacion(sqlConnection, query);
             return verificacion;
         }
-
         public int MultarPaciente(int multas)
         {
             int verificacion;
@@ -76,7 +96,6 @@ namespace IPS_Mejora_tu_Salud.Modelo
             verificacion = QueryVerificacion(sqlConnection, query);
             return verificacion;
         }
-
         public DataSet VerMultas()
         {
             SqlConnection sqlConnection = new SqlConnection(conexion.conexion);
@@ -104,8 +123,9 @@ namespace IPS_Mejora_tu_Salud.Modelo
         {
             SqlConnection sqlConnection = new SqlConnection(conexion.conexion);
 
-            string query = "SELECT IdentificacionPaciente, IdentificacionMedico, , FechaCita" +
+            string query = "SELECT Especialidad, IdentificacionPaciente, IdentificacionMedico,  FechaCita" +
                            "FROM Cita WHERE IdentificacionPaciente = '" +identificacionPaciente+ "' ";
+
 
             string mensaje = "Citas del paciente";
             DataSet dataSet = new DataSet();
@@ -113,17 +133,13 @@ namespace IPS_Mejora_tu_Salud.Modelo
             dataSet = QueryDataSet(sqlConnection, query, mensaje);
             return dataSet;
         }
-        public DataSet validarcitas(string identificacionPaciente)
-        {   
-
+        public DataSet CitasPAcientesID(string identificacionPaciente)
+        {
             SqlConnection sqlConnection = new SqlConnection(conexion.conexion);
 
-            string query = "SELECT Cita.IdentificacionPaciente, Cita.IdentificaionMedico," +
-                            "Medico.Especialidad FROM Cita INNER JOIN Medico" +
-                            "ON Cita.IdentificacionMedico = Medico.IdentificacionMedico" +
-                            "WHERE IdentificacionPaciente = '"+identificacionPaciente+"'";
+            string query = "SELECT * FROM Cita WHERE IdentificacionPaciente = '" + identificacionPaciente + "' ";
 
-            string mensaje = "Citas del paciente";
+            string mensaje = "cita encontrado";
             DataSet dataSet = new DataSet();
 
             dataSet = QueryDataSet(sqlConnection, query, mensaje);
@@ -173,7 +189,7 @@ namespace IPS_Mejora_tu_Salud.Modelo
             int verificacion;
             SqlConnection sqlConnection = new SqlConnection(conexion.conexion);
 
-            string query = "UPDATE Medico SET Nombres = '" + nombres + "', SalarioPorCita = '" + salarioPorCita + "', " +
+            string query = "UPDATE Medico SET Nombres = '" + nombres + "', SalarioPorCita = '" + salarioPorCita + "' " +
                            " WHERE IdentificacionMedico = '" + identificacionMedico + "'";
 
             verificacion = QueryVerificacion(sqlConnection, query);
@@ -224,7 +240,7 @@ namespace IPS_Mejora_tu_Salud.Modelo
             int verificacion;
             SqlConnection sqlConnection = new SqlConnection(conexion.conexion);
 
-            string query = "INSERT INTO Cita (IdentificacionMedico, IdentificacionPaciente, FechaCita)" +
+            string query = "INSERT INTO Cita (IdentificacionMedico, IdentificacionPaciente, FechaCita, Especialidad)" +
                            "VALUES ('" + cita.IdentificacionMedico + "', '" + cita.IdentificacionPaciente + "'," +
                            "'" + Convert.ToDateTime(cita.FechaCita) + "')";
 
@@ -245,7 +261,6 @@ namespace IPS_Mejora_tu_Salud.Modelo
             return dataSet;
         }
 
-
         // no poner estático
         public int QueryVerificacion(SqlConnection sqlConnection, string query)
         {
@@ -260,7 +275,6 @@ namespace IPS_Mejora_tu_Salud.Modelo
 
             return verificacion;
         }
-
         public DataSet QueryDataSet(SqlConnection sqlConnection, string query, string mensaje)
         {
             sqlConnection.Open();
