@@ -454,9 +454,9 @@ namespace IPS_Mejora_tu_Salud.Interfaces
                 if (Grupo_Buscar.Text.Equals("Citas Paciente"))
                 {
                     string identificacion = txt_documento.Text;
-                    DataSet actualizar = new DataSet();
-                    actualizar = ips.VerCitasPaciente(identificacion);
-                    DataGriwView.DataSource = actualizar.Tables["Citas del paciente"];
+                    DataSet Actualizarcitas = new DataSet();
+                    Actualizarcitas = ips.CitasPAcientesID(identificacion);
+                    DataGriwView.DataSource = Actualizarcitas.Tables["cita encontrado"];
 
                     if (DataGriwView.Rows.Count == 0)
                     {
@@ -568,7 +568,7 @@ namespace IPS_Mejora_tu_Salud.Interfaces
                     {
                         MessageBox.Show(ex.Message);
                     }
-                    catch (SqlException ex)
+                    catch (SqlException )
                     {
                         MessageBox.Show("UPS! Ocurrio un error");
 
@@ -615,7 +615,7 @@ namespace IPS_Mejora_tu_Salud.Interfaces
                 {
                     MessageBox.Show(ex.Message);
                 }
-                catch (SqlException ex)
+                catch (SqlException )
                 {
                     MessageBox.Show("UPS! Ocurrio un error");
 
@@ -740,7 +740,7 @@ namespace IPS_Mejora_tu_Salud.Interfaces
             {
                 MessageBox.Show("Cita Registrada Correctamente");
                 DataSet Actualizarcitas = new DataSet();
-                //Actualizarcitas = ips.BuscarCitas(IdentificacionPaciente);
+                Actualizarcitas = ips.CitasPAcientesID(IdentificacionPaciente);
                 DataGriwView.DataSource = Actualizarcitas.Tables["Paciente encontrado"];
                 txt_identificacionPacienteCita.Clear();
                 comboBoxCitas.Text = "";
@@ -750,6 +750,18 @@ namespace IPS_Mejora_tu_Salud.Interfaces
         }
         private void Btn_BuscarRegistroCita_Click(object sender, EventArgs e)
         {
+            //ajuste interfaz
+            {
+                lbl_Tipo_Cita.Visible = false;
+                comboBoxCitas.Visible = false;
+                lbl_identificacionMedico_Cita.Visible = false;
+                txt_identificacion_medico_cita.Visible = false;
+                lbl_FechaCita.Visible = false;
+                lbl_HoraCita.Visible = false;
+                Datatime_cita.Visible = false;
+                Datatime2_cita.Visible = false;
+                Btn_RegistarCita.Visible = false;
+            }
             string IdentificacionPaciente = txt_identificacionPacienteCita.Text;
             DataSet pazysalvo = new DataSet();
             pazysalvo = ips.VerMultasPorIdentificacion(IdentificacionPaciente);
@@ -768,6 +780,7 @@ namespace IPS_Mejora_tu_Salud.Interfaces
                 string especialidad2 = "Optometria";
                 string especialidad3 = "Pediatria";
                 
+                //verifica no tener mas de doscitas mismo tipo
                 foreach (DataGridViewRow row in DataGriwView.Rows)
                 {
                     
@@ -784,20 +797,17 @@ namespace IPS_Mejora_tu_Salud.Interfaces
                     if (row.Cells[4].Value.ToString().Equals(especialidad3))
 
                     {
-                       
                         comboBoxCitas.Items.RemoveAt(2);
                     }
                 }
 
-                lbl_Tipo_Cita.Visible = true;
-                comboBoxCitas.Visible = true;
-
                 // mira si tiene mas de dos citas
                 if (DataGriwView.Rows.Count < 2)
                 {
-                    //comprueba si hay especialidades especialidad
-                    if (comboBoxCitas.Items.Count >= 1)
+                    //ajuste interfaz
                     {
+                        lbl_Tipo_Cita.Visible = true;
+                        comboBoxCitas.Visible = true;
                         lbl_identificacionMedico_Cita.Visible = true;
                         txt_identificacion_medico_cita.Visible = true;
                         lbl_FechaCita.Visible = true;
@@ -805,17 +815,24 @@ namespace IPS_Mejora_tu_Salud.Interfaces
                         Datatime_cita.Visible = true;
                         Datatime2_cita.Visible = true;
                         Btn_RegistarCita.Visible = true;
-                    }
-                    else
-                    {
-                        MessageBox.Show("No es posible solicitar Citas");
-                    }
+                    } 
                 }
                 else 
                 {
-                    MessageBox.Show("paciente tiene mas de dos citas");
+                    MessageBox.Show("Paciente tiene de Dos citas");
+                    txt_identificacionPacienteCita.Clear();
+                    comboBoxCitas.Items.AddRange(new object[] {"Medico General",
+                            "Optometria",
+                            "Pediatria"});
                 }
             }
+        }
+        private void comboBoxCitas_SelectedIndexChanged(object sender, EventArgs e)
+        { //trae listado medicos en la cita
+            string deleccion = (string)comboBoxCitas.SelectedItem;
+            DataSet especalidadmedico = new DataSet();
+            especalidadmedico = ips.BuscarespecialidadMedico(deleccion);
+            DataGriwView.DataSource = especalidadmedico.Tables["especialidad encontrado"];
         }
 
         //Validaciones-----------------------------------------------------------------------------------------------------
@@ -892,10 +909,7 @@ namespace IPS_Mejora_tu_Salud.Interfaces
             validar.OnlyNumbers(e);
         }
 
-        private void comboBoxCitas_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
+       
     }
  
        

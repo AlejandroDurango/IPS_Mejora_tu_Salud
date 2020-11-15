@@ -119,20 +119,7 @@ namespace IPS_Mejora_tu_Salud.Modelo
 
             return QueryDataSet(sqlConnection, query, mensaje); 
         }
-        public DataSet VerCitasPaciente(string identificacionPaciente)
-        {
-            SqlConnection sqlConnection = new SqlConnection(conexion.conexion);
-
-            string query = "SELECT Especialidad, IdentificacionPaciente, IdentificacionMedico,  FechaCita" +
-                           "FROM Cita WHERE IdentificacionPaciente = '" +identificacionPaciente+ "' ";
-
-
-            string mensaje = "Citas del paciente";
-            DataSet dataSet = new DataSet();
-
-            dataSet = QueryDataSet(sqlConnection, query, mensaje);
-            return dataSet;
-        }
+        
         public DataSet CitasPAcientesID(string identificacionPaciente)
         {
             SqlConnection sqlConnection = new SqlConnection(conexion.conexion);
@@ -166,6 +153,17 @@ namespace IPS_Mejora_tu_Salud.Modelo
             string query = "SELECT * FROM Medico WHERE IdentificacionMedico = '" + identificacionMedico + "'";
 
             string mensaje = "Medico encontrado";
+            DataSet dataSet = new DataSet();
+            dataSet = QueryDataSet(sqlConnection, query, mensaje);
+            return dataSet;
+        }
+        public DataSet BuscarespecialidadMedico(string especialidad1)
+        {
+            SqlConnection sqlConnection = new SqlConnection(conexion.conexion);
+
+            string query = "SELECT * FROM Medico WHERE Especialidad = '" + especialidad1 + "'";
+
+            string mensaje = "especialidad encontrado";
             DataSet dataSet = new DataSet();
             dataSet = QueryDataSet(sqlConnection, query, mensaje);
             return dataSet;
@@ -242,7 +240,7 @@ namespace IPS_Mejora_tu_Salud.Modelo
 
             string query = "INSERT INTO Cita (IdentificacionMedico, IdentificacionPaciente, FechaCita, Especialidad)" +
                            "VALUES ('" + cita.IdentificacionMedico + "', '" + cita.IdentificacionPaciente + "'," +
-                           "'" + Convert.ToDateTime(cita.FechaCita) + "')";
+                           "'" + cita.FechaCita + "','" + cita.Especialidad + "')";
 
             verificacion = QueryVerificacion(sqlConnection, query);
             return verificacion;
