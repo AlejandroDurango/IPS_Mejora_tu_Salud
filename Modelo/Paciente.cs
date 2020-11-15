@@ -9,7 +9,7 @@ using System.Windows.Forms;
 
 namespace IPS_Mejora_tu_Salud.Modelo
 {
-    class Paciente
+    public class Paciente
     {
         private string identificacionPaciente;
         private string nombres;
@@ -36,9 +36,7 @@ namespace IPS_Mejora_tu_Salud.Modelo
             FechaRegistro = fechaRegistro;
             NumeroCitas = 0;
             Multas = 0;
-
         }
-
         public string IdentificacionPaciente { get => identificacionPaciente; set => identificacionPaciente = value; }
         public string Nombres { get => nombres; set => nombres = value; }
         public string Apellidos { get => apellidos; set => apellidos = value; }
@@ -83,10 +81,5 @@ namespace IPS_Mejora_tu_Salud.Modelo
                 return 0;
             }
         }
-
-        /*
-         * private 
-         */ 
-
     }
 }

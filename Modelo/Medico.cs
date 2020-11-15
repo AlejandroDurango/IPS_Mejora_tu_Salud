@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace IPS_Mejora_tu_Salud.Modelo
 {
-    class Medico
+    public class Medico
     {
         private string identificacionMedico;
         private string nombres;
